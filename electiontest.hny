@@ -1,0 +1,44 @@
+from synch import Lock, acquire, release
+import election
+
+threads_executed = 0
+number_of_spawned_threads = 4
+
+NUM_CANDIDATES = 2
+NUM_CITIZENS = 3
+EXPECTED_VOTES = [3, 0]
+WINNER = 0
+
+e = election.Election(NUM_CANDIDATES, NUM_CITIZENS)
+
+def complete():
+    atomically:
+        threads_executed += 1
+
+def test_vote(e, candidate_idx, citizen_idx):
+    election.vote(e, candidate_idx, citizen_idx)
+    complete()
+
+def test_withdraw(e, first_candidate, second_candidate, citizen_idx):
+    election.vote(e, first_candidate, citizen_idx)
+    election.withdraw(e, citizen_idx)
+    election.vote(e, second_candidate, citizen_idx)
+    complete()
+
+def end_test():
+    atomically when threads_executed == number_of_spawned_threads:
+        # transfer votes from second candidate to the first one
+        election.transfer(?e, 1, 0)
+        for i in {0, NUM_CANDIDATES -1}:
+            let received_votes = election.get_votes(?e, i):
+                assert EXPECTED_VOTES[i] == received_votes
+
+        let winner_idx = election.winner(?e):
+            assert winner_idx == WINNER
+
+spawn test_vote(?e, 0, 0)
+spawn test_vote(?e, 1, 1)
+spawn test_vote(?e, 1, 1)
+spawn test_withdraw(?e, 0, 1, 2)
+
+spawn end_test()
