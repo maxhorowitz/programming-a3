@@ -2,10 +2,29 @@ def Election(n, m):
     result = { .candidates:[0,]*n , .citizens[{.voted: False, .voted_for: -1},]*m }
 
 def vote(election, candidate, citizen):
-    pass
+    atomically:
+        # (i) the number of votes for the candidate with index 'candidate' is incremented by one
+        election->candidates candidate += 1
 
-def withdraw(election, candidate):
-    pass
+        # (ii) citizen 'citizen' no longer has a vote to give
+        (election->citizens citizen)->voted = True
+        (election->citizens citizen)->voted_for = candidate
+
+         # (iii) vote(e, can, cit) returns True
+         result = True
+
+def withdraw(election, citizen):
+    atomically:
+        # if the citizen with index 'citizen' does not have a vote to give in election 'election'
+        if (election->citizens citizen)->voted == True:
+            # citizen with index 'citizen' must have voted
+
+            # (i) the vote count of the candidate that citizen voted for is decremented
+            candidate = (election->citizens citizen)->voted_for
+            election->candidates candidate -= 1
+
+            # (ii) 
+
 
 def get_votes(election, candidate):
     pass
