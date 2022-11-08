@@ -1,5 +1,22 @@
+from synch import *
+import list
+
 def Election(n, m):
-    result = {.candidates:[0,]*n, .citizens:[{.voted: False, .voted_for: -1},]*m}
+    result = {
+        # Shared variables for concurrency
+        .citizen_voted_mutex: Lock(),
+        .citizen_voted_for_mutex: Lock(),
+        .candidate_count_mutex: Lock(),
+        .vote_cond: Condition(),
+        .withdraw_cond: Condition(),
+        .get_votes_cond: Condition(),
+        .transfer_cond: Condition(),
+        .winner_cond: Condition(),
+
+        # Election data
+        .candidates:[0,]*n, 
+        .citizens:[{.voted: False, .voted_for: -1},]*m
+    }
 
 def vote(election, candidate, citizen):
     pass
