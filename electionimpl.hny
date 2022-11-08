@@ -1,0 +1,17 @@
+def Election(n, m):
+    result = {.candidates:[0,]*n, .citizens:[{.voted: False, .voted_for: -1},]*m}
+
+def vote(election, candidate, citizen):
+    pass
+
+def withdraw(election, citizen):
+    pass
+
+def get_votes(election, candidate):
+    pass
+
+def transfer(election, candidate_from, candidate_to):
+    pass
+
+def winner(election):
+    pass
