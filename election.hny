@@ -3,15 +3,19 @@ def Election(n, m):
 
 def vote(election, candidate, citizen):
     atomically:
-        # (i) the number of votes for the candidate with index 'candidate' is incremented by one
-        election->candidates candidate += 1
+        # if the citizen with index 'citizen' has a vote to give in election 'election'
+        if (election->citizens citizen)->voted == False:
+            # (i) the number of votes for the candidate with index 'candidate' is incremented by one
+            election->candidates candidate += 1
 
-        # (ii) citizen 'citizen' no longer has a vote to give
-        (election->citizens citizen)->voted = True
-        (election->citizens citizen)->voted_for = candidate
+            # (ii) citizen 'citizen' no longer has a vote to give
+            (election->citizens citizen)->voted = True
+            (election->citizens citizen)->voted_for = candidate
 
-         # (iii) vote(e, can, cit) returns True
-         result = True
+            # (iii) vote(e, can, cit) returns True
+            result = True
+        else:
+            result = False
 
 def withdraw(election, citizen):
     atomically:
@@ -23,14 +27,37 @@ def withdraw(election, citizen):
             candidate = (election->citizens citizen)->voted_for
             election->candidates candidate -= 1
 
-            # (ii) 
+            # (ii) citizen regains their vote
+            (election->citizens citizen)->voted_for = -1
+            (election->citizens citizen)->voted = False
 
+            # (iii) withdraw(e, cit) returns true
+            result = True
+        else:
+            result = False
 
 def get_votes(election, candidate):
-    pass
+    atomically:
+        result = (election->candidates candidate)
 
-def transfer(election, candidate_from, candidate_to ):
-    pass
+def transfer(election, candidate_from, candidate_to):
+    atomically:
+        # transfer sum of votes from one candidate to the other
+        election->candidates candidate_to += election->candidates candidate_from
+        election->candidates candidate_from = 0
+
+        # update citizens struct to reflect new voting assignments
+        for i in 0..(len(election->citizens)):
+            if (((election->citizens i)->voted == True) and ((election->citizens i)->voted_for == candidate_from)):
+                (election->citizens i)->voted_for = candidate_to
+
 
 def winner(election):
-    pass
+    atomically:
+        current_max = 0
+        winning_candidate = -1
+        for i in 0..(len(election->candidates)):
+            if (election->candidates i) > current_max:
+                current_max = (election->candidates i)
+                winning_candidate = i
+        result = winning_candidate
