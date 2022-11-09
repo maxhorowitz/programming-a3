@@ -3,37 +3,70 @@ import list
 
 def Election(n, m):
     result = {
-        # Option 1: Three separate mutexes for each field of election that is read / written
-        .citizen_voted_mutex: Lock(),
-        .citizen_voted_for_mutex: Lock(),
-        .candidate_count_mutex: Lock(),
-
-        # Option 2: One encompassing mutex for all fields that are read / written
-        .mutex: Lock(),
-
-        # Condition variables
-        .vote_cond: Condition(),
-        .withdraw_cond: Condition(),
-        .get_votes_cond: Condition(),
-        .transfer_cond: Condition(),
-        .winner_cond: Condition(),
-
+        # n + m locks for candidates and citizens
+        .locks_can:[Lock(),]*n,
+        .locks_cit:[Lock(),]*m,
         # Election data
         .candidates:[0,]*n, 
         .citizens:[{.voted: False, .voted_for: -1},]*m
     }
 
 def vote(election, candidate, citizen):
-    pass
+    #acquire lock
+    acquire(?(election->locks_can[candidate]))
+    acquire(?(election->locks_cit[citizen]))
+    
+    #vote
+    if election->citizens[citizen].voted == False:
+        election->candidates[candidate] += 1
+        election->citizens[citizen].voted = True
+        election->citizens[citizen].voted_for = candidate
+        result = True
+    result = False
+    
+    #release lock
+    release(?(election->locks_cit[citizen]))
+    release(?(election->locks_can[candidate]))
+
 
 def withdraw(election, citizen):
-    pass
+    #acquire lock
+    candidate = election->citizens[citizen].voted_for
+    acquire(?(election->locks_can[candidate]))
+    acquire(?(election->locks_cit[citizen]))
+    
+    #withdraw
+    candidate = election->citizens[citizen].voted_for
+    if election->citizens[citizen].voted == True:
+        election->candidates[candidate] -= 1
+        election->citizens[citizen].voted = False
+        election->citizens[citizen].voted_for = -1
+        return True
+    return False
+    
+    #release lock
+    release(?(election->locks_cit[citizen]))
+    release(?(election->locks_can[candidate]))
 
 def get_votes(election, candidate):
-    pass
+    #acquire lock
+    acquire(?(election->locks_can[candidate]))
+    
+    #get votes
+    return elections->candidates[candidate]
+    
+    #release lock
+    release(?(election->locks_can[candidate]))
 
 def transfer(election, candidate_from, candidate_to):
-    pass
+    elections->candidates[candidate_to] += elections->candidates[candidate_from]
+    elections->candidates[candidate_from] = 0
 
 def winner(election):
-    pass
+    high = -1
+    idx = -1
+    for i in candidates:
+        if candidates[i] > high:
+            high = candidates[i]
+            idx = i
+    return idx
