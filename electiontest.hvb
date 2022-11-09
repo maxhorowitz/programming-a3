@@ -1,1 +1,3065 @@
-No issues were detected with this program.
+Issue: Safety violation
+
+================================================
+Running thread T0: __init__()
+mode:  runnable atomic
+stack: ['[]']
+state id: 1
+================================================
+
+Step 1:
+  program counter:   0
+  hvm code:          Frame __init__()
+  explanation:       method "__init__" with argument () set to []
+  file:              electiontest.hny
+  start statement:   line=1 column=1
+  end statement:     line=44 column=23
+  source code:       from synch import Lock, acquire, release
+  shared variables:  { }
+  method variables:  { result: None }
+  call trace:        __init__()
+  stack:             [{:}]
+
+Step 2:
+  program counter:   1
+  hvm code:          Jump 52
+  explanation:       jump over method definition: set program counter to 52
+  file:              /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/harmony_model_checker/modules/list.hny
+  start statement:   line=2 column=1
+  end statement:     line=2 column=20
+  source code:       def subseq(s, b, e):
+                     ^^^
+
+Step 3:
+  program counter:   52
+  hvm code:          Push PC(55)
+  explanation:       push constant PC(55)
+  start statement:   line=11 column=1
+  end statement:     line=11 column=24
+  source code:       builtin tail "list$tail"
+                             ^^^^
+  stack:             [{:}, PC(55)]
+
+Step 4:
+  program counter:   53
+  hvm code:          Builtin(list$tail)
+  explanation:       pop pc (PC(55)) and bind to built-in method list$tail
+  source code:       builtin tail "list$tail"
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+  stack:             [{:}]
+
+Step 5:
+  program counter:   54
+  hvm code:          Jump 371
+  explanation:       jump over method definition: set program counter to 371
+  start statement:   line=12 column=1
+  end statement:     line=12 column=12
+  source code:       def tail(s):
+                     ^^^
+
+Step 6:
+  program counter:   371
+  hvm code:          Push PC(374)
+  explanation:       push constant PC(374)
+  file:              /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/harmony_model_checker/modules/bag.hny
+  start statement:   line=15 column=1
+  end statement:     line=15 column=39
+  source code:       builtin multiplicity "bag$multiplicity"
+                             ^^^^^^^^^^^^
+  stack:             [{:}, PC(374)]
+
+Step 7:
+  program counter:   372
+  hvm code:          Builtin(bag$multiplicity)
+  explanation:       pop pc (PC(374)) and bind to built-in method bag$multiplicity
+  source code:       builtin multiplicity "bag$multiplicity"
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  stack:             [{:}]
+
+Step 8:
+  program counter:   373
+  hvm code:          Jump 392
+  explanation:       jump over method definition: set program counter to 392
+  start statement:   line=16 column=1
+  end statement:     line=16 column=26
+  source code:       def multiplicity(bg, elt):
+                     ^^^
+
+Step 9:
+  program counter:   392
+  hvm code:          Push PC(395)
+  explanation:       push constant PC(395)
+  start statement:   line=22 column=1
+  end statement:     line=22 column=23
+  source code:       builtin size "bag$size"
+                             ^^^^
+  stack:             [{:}, PC(395)]
+
+Step 10:
+  program counter:   393
+  hvm code:          Builtin(bag$size)
+  explanation:       pop pc (PC(395)) and bind to built-in method bag$size
+  source code:       builtin size "bag$size"
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+  stack:             [{:}]
+
+Step 11:
+  program counter:   394
+  hvm code:          Jump 414
+  explanation:       jump over method definition: set program counter to 414
+  start statement:   line=23 column=1
+  end statement:     line=23 column=13
+  source code:       def size(bg):
+                     ^^^
+
+Step 12:
+  program counter:   414
+  hvm code:          Push PC(417)
+  explanation:       push constant PC(417)
+  start statement:   line=28 column=1
+  end statement:     line=28 column=23
+  source code:       builtin bmin "bag$bmin"
+                             ^^^^
+  stack:             [{:}, PC(417)]
+
+Step 13:
+  program counter:   415
+  hvm code:          Builtin(bag$bmin)
+  explanation:       pop pc (PC(417)) and bind to built-in method bag$bmin
+  source code:       builtin bmin "bag$bmin"
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+  stack:             [{:}]
+
+Step 14:
+  program counter:   416
+  hvm code:          Jump 433
+  explanation:       jump over method definition: set program counter to 433
+  start statement:   line=29 column=1
+  end statement:     line=29 column=13
+  source code:       def bmin(bg):
+                     ^^^
+
+Step 15:
+  program counter:   433
+  hvm code:          Push PC(436)
+  explanation:       push constant PC(436)
+  start statement:   line=33 column=1
+  end statement:     line=33 column=23
+  source code:       builtin bmax "bag$bmax"
+                             ^^^^
+  stack:             [{:}, PC(436)]
+
+Step 16:
+  program counter:   434
+  hvm code:          Builtin(bag$bmax)
+  explanation:       pop pc (PC(436)) and bind to built-in method bag$bmax
+  source code:       builtin bmax "bag$bmax"
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+  stack:             [{:}]
+
+Step 17:
+  program counter:   435
+  hvm code:          Jump 461
+  explanation:       jump over method definition: set program counter to 461
+  start statement:   line=34 column=1
+  end statement:     line=34 column=13
+  source code:       def bmax(bg):
+                     ^^^
+
+Step 18:
+  program counter:   461
+  hvm code:          Push PC(464)
+  explanation:       push constant PC(464)
+  start statement:   line=41 column=1
+  end statement:     line=41 column=21
+  source code:       builtin add "bag$add"
+                             ^^^
+  stack:             [{:}, PC(464)]
+
+Step 19:
+  program counter:   462
+  hvm code:          Builtin(bag$add)
+  explanation:       pop pc (PC(464)) and bind to built-in method bag$add
+  source code:       builtin add "bag$add"
+                     ^^^^^^^^^^^^^^^^^^^^^
+  stack:             [{:}]
+
+Step 20:
+  program counter:   463
+  hvm code:          Jump 490
+  explanation:       jump over method definition: set program counter to 490
+  start statement:   line=42 column=1
+  end statement:     line=42 column=17
+  source code:       def add(bg, elt):
+                     ^^^
+
+Step 21:
+  program counter:   490
+  hvm code:          Push PC(493)
+  explanation:       push constant PC(493)
+  start statement:   line=49 column=1
+  end statement:     line=49 column=27
+  source code:       builtin remove "bag$remove"
+                             ^^^^^^
+  stack:             [{:}, PC(493)]
+
+Step 22:
+  program counter:   491
+  hvm code:          Builtin(bag$remove)
+  explanation:       pop pc (PC(493)) and bind to built-in method bag$remove
+  source code:       builtin remove "bag$remove"
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  stack:             [{:}]
+
+Step 23:
+  program counter:   492
+  hvm code:          Jump 1283
+  explanation:       jump over method definition: set program counter to 1283
+  start statement:   line=50 column=1
+  end statement:     line=50 column=20
+  source code:       def remove(bg, elt):
+                     ^^^
+
+Step 24:
+  program counter:   1283
+  hvm code:          Push 0
+  explanation:       push constant 0
+  file:              electiontest.hny
+  start statement:   line=4 column=1
+  end statement:     line=4 column=20
+  source code:       threads_executed = 0
+                                        ^
+  stack:             [{:}, 0]
+
+Step 25:
+  program counter:   1284
+  hvm code:          Store threads_executed
+  explanation:       pop value (0) and store into variable threads_executed
+  source code:       threads_executed = 0
+                     ^^^^^^^^^^^^^^^^^^
+  shared variables:  { threads_executed: 0 }
+  stack:             [{:}]
+
+Step 26:
+  program counter:   1285
+  hvm code:          Push 4
+  explanation:       push constant 4
+  start statement:   line=5 column=1
+  end statement:     line=5 column=29
+  source code:       number_of_spawned_threads = 4
+                                                 ^
+  stack:             [{:}, 4]
+
+Step 27:
+  program counter:   1286
+  hvm code:          Store number_of_spawned_threads
+  explanation:       pop value (4) and store into variable number_of_spawned_threads
+  source code:       number_of_spawned_threads = 4
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  shared variables:  { number_of_spawned_threads: 4, threads_executed: 0 }
+  stack:             [{:}]
+
+Step 28:
+  program counter:   1287
+  hvm code:          Push 2
+  explanation:       push constant 2
+  start statement:   line=7 column=1
+  end statement:     line=7 column=18
+  source code:       NUM_CANDIDATES = 2
+                                      ^
+  stack:             [{:}, 2]
+
+Step 29:
+  program counter:   1288
+  hvm code:          Store NUM_CANDIDATES
+  explanation:       pop value (2) and store into variable NUM_CANDIDATES
+  source code:       NUM_CANDIDATES = 2
+                     ^^^^^^^^^^^^^^^^
+  shared variables:  { NUM_CANDIDATES: 2, number_of_spawned_threads: 4, threads_executed: 0 }
+  stack:             [{:}]
+
+Step 30:
+  program counter:   1289
+  hvm code:          Push 3
+  explanation:       push constant 3
+  start statement:   line=8 column=1
+  end statement:     line=8 column=16
+  source code:       NUM_CITIZENS = 3
+                                    ^
+  stack:             [{:}, 3]
+
+Step 31:
+  program counter:   1290
+  hvm code:          Store NUM_CITIZENS
+  explanation:       pop value (3) and store into variable NUM_CITIZENS
+  source code:       NUM_CITIZENS = 3
+                     ^^^^^^^^^^^^^^
+  shared variables:  { NUM_CANDIDATES: 2, NUM_CITIZENS: 3, number_of_spawned_threads: 4, threads_executed: 0 }
+  stack:             [{:}]
+
+Step 32:
+  program counter:   1291
+  hvm code:          Push [3, 0]
+  explanation:       push constant [3, 0]
+  start statement:   line=9 column=1
+  end statement:     line=9 column=23
+  source code:       EXPECTED_VOTES = [3, 0]
+                                       ^^^^
+  stack:             [{:}, [ 3, 0 ]]
+
+Step 33:
+  program counter:   1292
+  hvm code:          Store EXPECTED_VOTES
+  explanation:       pop value ([3, 0]) and store into variable EXPECTED_VOTES
+  source code:       EXPECTED_VOTES = [3, 0]
+                     ^^^^^^^^^^^^^^^^
+  shared variables:  { EXPECTED_VOTES: [ 3, 0 ], NUM_CANDIDATES: 2, NUM_CITIZENS: 3, number_of_spawned_threads: 4, threads_executed: 0 }
+  stack:             [{:}]
+
+Step 34:
+  program counter:   1293
+  hvm code:          Push 0
+  explanation:       push constant 0
+  start statement:   line=10 column=1
+  end statement:     line=10 column=10
+  source code:       WINNER = 0
+                              ^
+  stack:             [{:}, 0]
+
+Step 35:
+  program counter:   1294
+  hvm code:          Store WINNER
+  explanation:       pop value (0) and store into variable WINNER
+  source code:       WINNER = 0
+                     ^^^^^^^^
+  shared variables:  { EXPECTED_VOTES: [ 3, 0 ], NUM_CANDIDATES: 2, NUM_CITIZENS: 3, WINNER: 0, number_of_spawned_threads: 4, threads_executed: 0 }
+  stack:             [{:}]
+
+Step 36:
+  program counter:   1295
+  hvm code:          Push PC(944)
+  explanation:       push program counter constant 944 ("Election")
+  start statement:   line=12 column=1
+  end statement:     line=12 column=51
+  source code:       e = election.Election(NUM_CANDIDATES, NUM_CITIZENS)
+                         ^^^^^^^^^^^^^^^^^
+  stack:             [{:}, PC(944)]
+
+Step 37:
+  program counter:   1296
+  hvm code:          Push ()
+  explanation:       building a tuple: push constant ()
+  source code:       e = election.Election(NUM_CANDIDATES, NUM_CITIZENS)
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  stack:             [{:}, PC(944), []]
+
+Step 38:
+  program counter:   1297
+  hvm code:          Load NUM_CANDIDATES
+  explanation:       push value (2) of variable NUM_CANDIDATES
+  source code:       e = election.Election(NUM_CANDIDATES, NUM_CITIZENS)
+                                           ^^^^^^^^^^^^^^
+  stack:             [{:}, PC(944), [], 2]
+
+Step 39:
+  program counter:   1298
+  hvm code:          2-ary ListAdd
+  explanation:       pop 2 values (2, []); insert first value into the second; push result ([2])
+  source code:       e = election.Election(NUM_CANDIDATES, NUM_CITIZENS)
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  stack:             [{:}, PC(944), [ 2 ]]
+
+Step 40:
+  program counter:   1299
+  hvm code:          Load NUM_CITIZENS
+  explanation:       push value (3) of variable NUM_CITIZENS
+  source code:       e = election.Election(NUM_CANDIDATES, NUM_CITIZENS)
+                                                           ^^^^^^^^^^^^
+  stack:             [{:}, PC(944), [ 2 ], 3]
+
+Step 41:
+  program counter:   1300
+  hvm code:          2-ary ListAdd
+  explanation:       pop 2 values (3, [2]); insert first value into the second; push result ([2, 3])
+  source code:       e = election.Election(NUM_CANDIDATES, NUM_CITIZENS)
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  stack:             [{:}, PC(944), [ 2, 3 ]]
+
+Step 42:
+  program counter:   1301
+  hvm code:          Apply
+  explanation:       pop an argument ([2, 3]) and a program counter value (944: "Election") and call the method
+  source code:       e = election.Election(NUM_CANDIDATES, NUM_CITIZENS)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  call trace:        __init__() --> Election(2, 3)
+  stack:             [{:}, 20834, [ 2, 3 ]]
+
+Step 43:
+  program counter:   944
+  hvm code:          Frame Election(n, m)
+  explanation:       method "Election" with argument (n, m) set to [2, 3]
+  file:              electionimpl.hny
+  start statement:   line=4 column=1
+  end statement:     line=4 column=19
+  source code:       def Election(n, m):
+                     ^^^^^^^^^^^^^^^^^^^
+  method variables:  { m: 3, n: 2, result: None }
+  stack:             [{:}, 20834, { "result": None }]
+
+Step 44:
+  program counter:   945
+  hvm code:          DelVar result
+  explanation:       delete method variable result
+  start statement:   line=5 column=5
+  end statement:     line=12 column=5
+  source code:       .locks_can:[Lock(),]*n,
+  method variables:  { m: 3, n: 2 }
+
+Step 45:
+  program counter:   946
+  hvm code:          Push {:}
+  explanation:       push constant {:}
+  start expression:  line=7 column=9
+  end expression:    line=11 column=54
+  stack:             [{:}, 20834, { "result": None }, {:}]
+
+Step 46:
+  program counter:   947
+  hvm code:          Push "locks_can"
+  explanation:       push constant "locks_can"
+  source code:       .locks_can:[Lock(),]*n,
+  stack:             [{:}, 20834, { "result": None }, {:}, "locks_can"]
+
+Step 47:
+  program counter:   948
+  hvm code:          Push ()
+  explanation:       building a tuple: push constant ()
+  source code:       .locks_can:[Lock(),]*n,
+  stack:             [{:}, 20834, { "result": None }, {:}, "locks_can", []]
+
+Step 48:
+  program counter:   949
+  hvm code:          Push PC(679)
+  explanation:       push program counter constant 679 ("Lock")
+  source code:       .locks_can:[Lock(),]*n,
+  stack:             [{:}, 20834, { "result": None }, {:}, "locks_can", [], PC(679)]
+
+Step 49:
+  program counter:   950
+  hvm code:          Push ()
+  explanation:       push constant ()
+  source code:       .locks_can:[Lock(),]*n,
+  stack:             [{:}, 20834, { "result": None }, {:}, "locks_can", [], PC(679), []]
+
+Step 50:
+  program counter:   951
+  hvm code:          Apply
+  explanation:       pop an argument ([]) and a program counter value (679: "Lock") and call the method
+  source code:       .locks_can:[Lock(),]*n,
+  call trace:        __init__() --> Election(2, 3) --> Lock()
+  stack:             [{:}, 20834, { "result": None }, {:}, "locks_can", [], 15234, []]
+
+Step 51:
+  program counter:   679
+  hvm code:          Frame Lock()
+  explanation:       method "Lock" with argument () set to []
+  file:              /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/harmony_model_checker/modules/synch.hny
+  start statement:   line=24 column=1
+  end statement:     line=24 column=11
+  source code:       def Lock():
+                     ^^^^^^^^^^^
+  method variables:  { result: None }
+  stack:             [{:}, 20834, { "result": None }, {:}, "locks_can", [], 15234, { "m": 3, "n": 2 }]
+
+Step 52:
+  program counter:   680
+  hvm code:          DelVar result
+  explanation:       delete method variable result
+  start statement:   line=25 column=5
+  end statement:     line=25 column=27
+  source code:       result = BinSema(False)
+                              ^^^^^^^
+  method variables:  { }
+
+Step 53:
+  program counter:   681
+  hvm code:          Push PC(672)
+  explanation:       push program counter constant 672 ("BinSema")
+  start expression:  line=25 column=14
+  end expression:    line=25 column=20
+  stack:             [{:}, 20834, { "result": None }, {:}, "locks_can", [], 15234, { "m": 3, "n": 2 }, PC(672)]
+
+Step 54:
+  program counter:   682
+  hvm code:          Push False
+  explanation:       push constant False
+  source code:       result = BinSema(False)
+                                      ^^^^^
+  stack:             [{:}, 20834, { "result": None }, {:}, "locks_can", [], 15234, { "m": 3, "n": 2 }, PC(672), False]
+
+Step 55:
+  program counter:   683
+  hvm code:          Apply
+  explanation:       pop an argument (False) and a program counter value (672: "BinSema") and call the method
+  source code:       result = BinSema(False)
+                              ^^^^^^^^^^^^^^
+  call trace:        __init__() --> Election(2, 3) --> Lock() --> BinSema(False)
+  stack:             [{:}, 20834, { "result": None }, {:}, "locks_can", [], 15234, { "m": 3, "n": 2 }, 10946, False]
+
+Step 56:
+  program counter:   672
+  hvm code:          Frame BinSema(acquired)
+  explanation:       method "BinSema" with argument acquired set to False
+  start statement:   line=21 column=1
+  end statement:     line=21 column=22
+  source code:       def BinSema(acquired):
+                     ^^^^^^^^^^^^^^^^^^^^^^
+  method variables:  { acquired: False, result: None }
+  stack:             [{:}, 20834, { "result": None }, {:}, "locks_can", [], 15234, { "m": 3, "n": 2 }, 10946, {:}]
+
+Step 57:
+  program counter:   673
+  hvm code:          DelVar result
+  explanation:       delete method variable result
+  start statement:   line=22 column=5
+  end statement:     line=22 column=21
+  source code:       result = acquired
+                              ^^^^^^^^
+  method variables:  { acquired: False }
+
+Step 58:
+  program counter:   674
+  hvm code:          LoadVar acquired
+  explanation:       push value (False) of variable "acquired"
+  start expression:  line=22 column=14
+  end expression:    line=22 column=21
+  stack:             [{:}, 20834, { "result": None }, {:}, "locks_can", [], 15234, { "m": 3, "n": 2 }, 10946, {:}, False]
+
+Step 59:
+  program counter:   675
+  hvm code:          DelVar acquired
+  explanation:       delete method variable acquired
+  start expression:  line=22 column=14
+  end expression:    line=22 column=21
+  method variables:  { }
+
+Step 60:
+  program counter:   676
+  hvm code:          StoreVar result
+  explanation:       pop value (False) and store locally in variable "result"
+  source code:       result = acquired
+                     ^^^^^^^^
+  method variables:  { result: False }
+  stack:             [{:}, 20834, { "result": None }, {:}, "locks_can", [], 15234, { "m": 3, "n": 2 }, 10946, {:}]
+
+Step 61:
+  program counter:   677
+  hvm code:          Return
+  explanation:       push result (False) and restore method variables
+  start statement:   line=21 column=1
+  end statement:     line=21 column=22
+  source code:       def BinSema(acquired):
+                     ^^^^^^^^^^^^^^^^^^^^^^
+  method variables:  { }
+  call trace:        __init__() --> Election(2, 3) --> Lock()
+  stack:             [{:}, 20834, { "result": None }, {:}, "locks_can", [], 15234, { "m": 3, "n": 2 }, False]
+
+Step 62:
+  program counter:   684
+  hvm code:          StoreVar result
+  explanation:       pop value (False) and store locally in variable "result"
+  start statement:   line=25 column=5
+  end statement:     line=25 column=27
+  source code:       result = BinSema(False)
+                     ^^^^^^^^
+  method variables:  { result: False }
+  stack:             [{:}, 20834, { "result": None }, {:}, "locks_can", [], 15234, { "m": 3, "n": 2 }]
+
+Step 63:
+  program counter:   685
+  hvm code:          Return
+  explanation:       push result (False) and restore method variables
+  start statement:   line=24 column=1
+  end statement:     line=24 column=11
+  source code:       def Lock():
+                     ^^^^^^^^^^^
+  method variables:  { m: 3, n: 2 }
+  call trace:        __init__() --> Election(2, 3)
+  stack:             [{:}, 20834, { "result": None }, {:}, "locks_can", [], False]
+
+Step 64:
+  program counter:   952
+  hvm code:          2-ary ListAdd
+  explanation:       pop 2 values (False, []); insert first value into the second; push result ([False])
+  file:              electionimpl.hny
+  start statement:   line=5 column=5
+  end statement:     line=12 column=5
+  source code:       .locks_can:[Lock(),]*n,
+  stack:             [{:}, 20834, { "result": None }, {:}, "locks_can", [ False ]]
+
+Step 65:
+  program counter:   953
+  hvm code:          LoadVar n
+  explanation:       push value (2) of variable "n"
+  source code:       .locks_can:[Lock(),]*n,
+  stack:             [{:}, 20834, { "result": None }, {:}, "locks_can", [ False ], 2]
+
+Step 66:
+  program counter:   954
+  hvm code:          2-ary *
+  explanation:       pop 2 values (2, [False]); create multiple copies of list; push result ([False, False])
+  source code:       .locks_can:[Lock(),]*n,
+  stack:             [{:}, 20834, { "result": None }, {:}, "locks_can", [ False, False ]]
+
+Step 67:
+  program counter:   955
+  hvm code:          3-ary DictAdd
+  explanation:       pop 3 values ([False, False], "locks_can", {:}); add key/value pair to dictionary; push result ({ "locks_can": [False, False] })
+  source code:       .locks_can:[Lock(),]*n,
+  stack:             [{:}, 20834, { "result": None }, { "locks_can": [ False, False ] }]
+
+Step 68:
+  program counter:   956
+  hvm code:          Push "locks_cit"
+  explanation:       push constant "locks_cit"
+  source code:       .locks_cit:[Lock(),]*m,
+  stack:             [{:}, 20834, { "result": None }, { "locks_can": [ False, False ] }, "locks_cit"]
+
+Step 69:
+  program counter:   957
+  hvm code:          Push ()
+  explanation:       building a tuple: push constant ()
+  source code:       .locks_cit:[Lock(),]*m,
+  stack:             [{:}, 20834, { "result": None }, { "locks_can": [ False, False ] }, "locks_cit", []]
+
+Step 70:
+  program counter:   958
+  hvm code:          Push PC(679)
+  explanation:       push program counter constant 679 ("Lock")
+  source code:       .locks_cit:[Lock(),]*m,
+  stack:             [{:}, 20834, { "result": None }, { "locks_can": [ False, False ] }, "locks_cit", [], PC(679)]
+
+Step 71:
+  program counter:   959
+  hvm code:          Push ()
+  explanation:       push constant ()
+  source code:       .locks_cit:[Lock(),]*m,
+  stack:             [{:}, 20834, { "result": None }, { "locks_can": [ False, False ] }, "locks_cit", [], PC(679), []]
+
+Step 72:
+  program counter:   960
+  hvm code:          Apply
+  explanation:       pop an argument ([]) and a program counter value (679: "Lock") and call the method
+  source code:       .locks_cit:[Lock(),]*m,
+  call trace:        __init__() --> Election(2, 3) --> Lock()
+  stack:             [{:}, 20834, { "result": None }, { "locks_can": [ False, False ] }, "locks_cit", [], 15378, []]
+
+Step 73:
+  program counter:   679
+  hvm code:          Frame Lock()
+  explanation:       method "Lock" with argument () set to []
+  file:              /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/harmony_model_checker/modules/synch.hny
+  start statement:   line=24 column=1
+  end statement:     line=24 column=11
+  source code:       def Lock():
+                     ^^^^^^^^^^^
+  method variables:  { result: None }
+  stack:             [{:}, 20834, { "result": None }, { "locks_can": [ False, False ] }, "locks_cit", [], 15378, { "m": 3, "n": 2 }]
+
+Step 74:
+  program counter:   680
+  hvm code:          DelVar result
+  explanation:       delete method variable result
+  start statement:   line=25 column=5
+  end statement:     line=25 column=27
+  source code:       result = BinSema(False)
+                              ^^^^^^^
+  method variables:  { }
+
+Step 75:
+  program counter:   681
+  hvm code:          Push PC(672)
+  explanation:       push program counter constant 672 ("BinSema")
+  start expression:  line=25 column=14
+  end expression:    line=25 column=20
+  stack:             [{:}, 20834, { "result": None }, { "locks_can": [ False, False ] }, "locks_cit", [], 15378, { "m": 3, "n": 2 }, PC(672)]
+
+Step 76:
+  program counter:   682
+  hvm code:          Push False
+  explanation:       push constant False
+  source code:       result = BinSema(False)
+                                      ^^^^^
+  stack:             [{:}, 20834, { "result": None }, { "locks_can": [ False, False ] }, "locks_cit", [], 15378, { "m": 3, "n": 2 }, PC(672), False]
+
+Step 77:
+  program counter:   683
+  hvm code:          Apply
+  explanation:       pop an argument (False) and a program counter value (672: "BinSema") and call the method
+  source code:       result = BinSema(False)
+                              ^^^^^^^^^^^^^^
+  call trace:        __init__() --> Election(2, 3) --> Lock() --> BinSema(False)
+  stack:             [{:}, 20834, { "result": None }, { "locks_can": [ False, False ] }, "locks_cit", [], 15378, { "m": 3, "n": 2 }, 10946, False]
+
+Step 78:
+  program counter:   672
+  hvm code:          Frame BinSema(acquired)
+  explanation:       method "BinSema" with argument acquired set to False
+  start statement:   line=21 column=1
+  end statement:     line=21 column=22
+  source code:       def BinSema(acquired):
+                     ^^^^^^^^^^^^^^^^^^^^^^
+  method variables:  { acquired: False, result: None }
+  stack:             [{:}, 20834, { "result": None }, { "locks_can": [ False, False ] }, "locks_cit", [], 15378, { "m": 3, "n": 2 }, 10946, {:}]
+
+Step 79:
+  program counter:   673
+  hvm code:          DelVar result
+  explanation:       delete method variable result
+  start statement:   line=22 column=5
+  end statement:     line=22 column=21
+  source code:       result = acquired
+                              ^^^^^^^^
+  method variables:  { acquired: False }
+
+Step 80:
+  program counter:   674
+  hvm code:          LoadVar acquired
+  explanation:       push value (False) of variable "acquired"
+  start expression:  line=22 column=14
+  end expression:    line=22 column=21
+  stack:             [{:}, 20834, { "result": None }, { "locks_can": [ False, False ] }, "locks_cit", [], 15378, { "m": 3, "n": 2 }, 10946, {:}, False]
+
+Step 81:
+  program counter:   675
+  hvm code:          DelVar acquired
+  explanation:       delete method variable acquired
+  start expression:  line=22 column=14
+  end expression:    line=22 column=21
+  method variables:  { }
+
+Step 82:
+  program counter:   676
+  hvm code:          StoreVar result
+  explanation:       pop value (False) and store locally in variable "result"
+  source code:       result = acquired
+                     ^^^^^^^^
+  method variables:  { result: False }
+  stack:             [{:}, 20834, { "result": None }, { "locks_can": [ False, False ] }, "locks_cit", [], 15378, { "m": 3, "n": 2 }, 10946, {:}]
+
+Step 83:
+  program counter:   677
+  hvm code:          Return
+  explanation:       push result (False) and restore method variables
+  start statement:   line=21 column=1
+  end statement:     line=21 column=22
+  source code:       def BinSema(acquired):
+                     ^^^^^^^^^^^^^^^^^^^^^^
+  method variables:  { }
+  call trace:        __init__() --> Election(2, 3) --> Lock()
+  stack:             [{:}, 20834, { "result": None }, { "locks_can": [ False, False ] }, "locks_cit", [], 15378, { "m": 3, "n": 2 }, False]
+
+Step 84:
+  program counter:   684
+  hvm code:          StoreVar result
+  explanation:       pop value (False) and store locally in variable "result"
+  start statement:   line=25 column=5
+  end statement:     line=25 column=27
+  source code:       result = BinSema(False)
+                     ^^^^^^^^
+  method variables:  { result: False }
+  stack:             [{:}, 20834, { "result": None }, { "locks_can": [ False, False ] }, "locks_cit", [], 15378, { "m": 3, "n": 2 }]
+
+Step 85:
+  program counter:   685
+  hvm code:          Return
+  explanation:       push result (False) and restore method variables
+  start statement:   line=24 column=1
+  end statement:     line=24 column=11
+  source code:       def Lock():
+                     ^^^^^^^^^^^
+  method variables:  { m: 3, n: 2 }
+  call trace:        __init__() --> Election(2, 3)
+  stack:             [{:}, 20834, { "result": None }, { "locks_can": [ False, False ] }, "locks_cit", [], False]
+
+Step 86:
+  program counter:   961
+  hvm code:          2-ary ListAdd
+  explanation:       pop 2 values (False, []); insert first value into the second; push result ([False])
+  file:              electionimpl.hny
+  start statement:   line=5 column=5
+  end statement:     line=12 column=5
+  source code:       .locks_cit:[Lock(),]*m,
+  stack:             [{:}, 20834, { "result": None }, { "locks_can": [ False, False ] }, "locks_cit", [ False ]]
+
+Step 87:
+  program counter:   962
+  hvm code:          LoadVar m
+  explanation:       push value (3) of variable "m"
+  source code:       .locks_cit:[Lock(),]*m,
+  stack:             [{:}, 20834, { "result": None }, { "locks_can": [ False, False ] }, "locks_cit", [ False ], 3]
+
+Step 88:
+  program counter:   963
+  hvm code:          2-ary *
+  explanation:       pop 2 values (3, [False]); create multiple copies of list; push result ([False, False, False])
+  source code:       .locks_cit:[Lock(),]*m,
+  stack:             [{:}, 20834, { "result": None }, { "locks_can": [ False, False ] }, "locks_cit", [ False, False, False ]]
+
+Step 89:
+  program counter:   964
+  hvm code:          3-ary DictAdd
+  explanation:       pop 3 values ([False, False, False], "locks_cit", { "locks_can": [False, False] }); add key/value pair to dictionary; push result ({ "locks_can": [False, False], "locks_cit": [False, False, False] })
+  source code:       .locks_can:[Lock(),]*n,
+  stack:             [{:}, 20834, { "result": None }, { "locks_can": [ False, False ], "locks_cit": [ False, False, False ] }]
+
+Step 90:
+  program counter:   965
+  hvm code:          Push "candidates"
+  explanation:       push constant "candidates"
+  source code:       .candidates:[0,]*n, 
+  stack:             [{:}, 20834, { "result": None }, { "locks_can": [ False, False ], "locks_cit": [ False, False, False ] }, "candidates"]
+
+Step 91:
+  program counter:   966
+  hvm code:          Push [0,]
+  explanation:       push constant [0,]
+  source code:       .candidates:[0,]*n, 
+  stack:             [{:}, 20834, { "result": None }, { "locks_can": [ False, False ], "locks_cit": [ False, False, False ] }, "candidates", [ 0 ]]
+
+Step 92:
+  program counter:   967
+  hvm code:          LoadVar n
+  explanation:       push value (2) of variable "n"
+  source code:       .candidates:[0,]*n, 
+  stack:             [{:}, 20834, { "result": None }, { "locks_can": [ False, False ], "locks_cit": [ False, False, False ] }, "candidates", [ 0 ], 2]
+
+Step 93:
+  program counter:   968
+  hvm code:          DelVar n
+  explanation:       delete method variable n
+  start expression:  line=10 column=26
+  end expression:    line=10 column=26
+  method variables:  { m: 3 }
+
+Step 94:
+  program counter:   969
+  hvm code:          2-ary *
+  explanation:       pop 2 values (2, [0]); create multiple copies of list; push result ([0, 0])
+  source code:       .candidates:[0,]*n, 
+  stack:             [{:}, 20834, { "result": None }, { "locks_can": [ False, False ], "locks_cit": [ False, False, False ] }, "candidates", [ 0, 0 ]]
+
+Step 95:
+  program counter:   970
+  hvm code:          3-ary DictAdd
+  explanation:       pop 3 values ([0, 0], "candidates", { "locks_can": [False, False], "locks_cit": [False, False, False] }); add key/value pair to dictionary; push result ({ "candidates": [0, 0], "locks_can": [False, False], "locks_cit": [False, False, False] })
+  source code:       .locks_can:[Lock(),]*n,
+  stack:             [{:}, 20834, { "result": None }, { "candidates": [ 0, 0 ], "locks_can": [ False, False ], "locks_cit": [ False, False, False ] }]
+
+Step 96:
+  program counter:   971
+  hvm code:          Push "citizens"
+  explanation:       push constant "citizens"
+  source code:       .citizens:[{.voted: False, .voted_for: -1},]*m
+  stack:             [{:}, 20834, { "result": None }, { "candidates": [ 0, 0 ], "locks_can": [ False, False ], "locks_cit": [ False, False, False ] }, "citizens"]
+
+Step 97:
+  program counter:   972
+  hvm code:          Push [{ "voted":False, "voted_for":-1 },]
+  explanation:       push constant [{ "voted":False, "voted_for":-1 },]
+  source code:       .citizens:[{.voted: False, .voted_for: -1},]*m
+  stack:             [{:}, 20834, { "result": None }, { "candidates": [ 0, 0 ], "locks_can": [ False, False ], "locks_cit": [ False, False, False ] }, "citizens", [ { "voted": False, "voted_for": -1 } ]]
+
+Step 98:
+  program counter:   973
+  hvm code:          LoadVar m
+  explanation:       push value (3) of variable "m"
+  source code:       .citizens:[{.voted: False, .voted_for: -1},]*m
+  stack:             [{:}, 20834, { "result": None }, { "candidates": [ 0, 0 ], "locks_can": [ False, False ], "locks_cit": [ False, False, False ] }, "citizens", [ { "voted": False, "voted_for": -1 } ], 3]
+
+Step 99:
+  program counter:   974
+  hvm code:          DelVar m
+  explanation:       delete method variable m
+  start expression:  line=11 column=54
+  end expression:    line=11 column=54
+  method variables:  { }
+
+Step 100:
+  program counter:   975
+  hvm code:          2-ary *
+  explanation:       pop 2 values (3, [{ "voted": False, "voted_for": -1 }]); create multiple copies of list; push result ([{ "voted": False, "voted_for": -1 }, { "voted": False, "voted_for": -1 }, { "voted": False, "voted_for": -1 }])
+  source code:       .citizens:[{.voted: False, .voted_for: -1},]*m
+  stack:             [{:}, 20834, { "result": None }, { "candidates": [ 0, 0 ], "locks_can": [ False, False ], "locks_cit": [ False, False, False ] }, "citizens", [ { "voted": False, "voted_for": -1 }, { "voted": False, "voted_for": -1 }, { "voted": False, "voted_for": -1 } ]]
+
+Step 101:
+  program counter:   976
+  hvm code:          3-ary DictAdd
+  explanation:       pop 3 values ([{ "voted": False, "voted_for": -1 }, { "voted": False, "voted_for": -1 }, { "voted": False, "voted_for": -1 }], "citizens", { "candidates": [0, 0], "locks_can": [False, False], "locks_cit": [False, False, False] }); add key/value pair to dictionary; push result ({ "candidates": [0, 0], "citizens": [{ "voted": False, "voted_for": -1 }, { "voted": False, "voted_for": -1 }, { "voted": False, "voted_for": -1 }], "locks_can": [False, False], "locks_cit": [False, False, False] })
+  source code:       .locks_can:[Lock(),]*n,
+  stack:             [{:}, 20834, { "result": None }, { "candidates": [ 0, 0 ], "citizens": [ { "voted": False, "voted_for": -1 }, { "voted": False, "voted_for": -1 }, { "voted": False, "voted_for": -1 } ], "locks_can": [ False, False ], "locks_cit": [ False, False, False ] }]
+
+Step 102:
+  program counter:   977
+  hvm code:          StoreVar result
+  explanation:       pop value ({ "candidates": [0, 0], "citizens": [{ "voted": False, "voted_for": -1 }, { "voted": False, "voted_for": -1 }, { "voted": False, "voted_for": -1 }], "locks_can": [False, False], "locks_cit": [False, False, False] }) and store locally in variable "result"
+  source code:       result = {
+  method variables:  { result: { "candidates": [ 0, 0 ], "citizens": [ { "voted": False, "voted_for": -1 }, { "voted": False, "voted_for": -1 }, { "voted": False, "voted_for": -1 } ], "locks_can": [ False, False ], "locks_cit": [ False, False, False ] } }
+  stack:             [{:}, 20834, { "result": None }]
+
+Step 103:
+  program counter:   978
+  hvm code:          Return
+  explanation:       push result ({ "candidates": [0, 0], "citizens": [{ "voted": False, "voted_for": -1 }, { "voted": False, "voted_for": -1 }, { "voted": False, "voted_for": -1 }], "locks_can": [False, False], "locks_cit": [False, False, False] }) and restore method variables
+  start statement:   line=4 column=1
+  end statement:     line=4 column=19
+  source code:       def Election(n, m):
+                     ^^^^^^^^^^^^^^^^^^^
+  method variables:  { result: None }
+  call trace:        __init__()
+  stack:             [{:}, { "candidates": [ 0, 0 ], "citizens": [ { "voted": False, "voted_for": -1 }, { "voted": False, "voted_for": -1 }, { "voted": False, "voted_for": -1 } ], "locks_can": [ False, False ], "locks_cit": [ False, False, False ] }]
+
+Step 104:
+  program counter:   1302
+  hvm code:          Store e
+  explanation:       pop value ({ "candidates": [0, 0], "citizens": [{ "voted": False, "voted_for": -1 }, { "voted": False, "voted_for": -1 }, { "voted": False, "voted_for": -1 }], "locks_can": [False, False], "locks_cit": [False, False, False] }) and store into variable e
+  file:              electiontest.hny
+  start statement:   line=12 column=1
+  end statement:     line=12 column=51
+  source code:       e = election.Election(NUM_CANDIDATES, NUM_CITIZENS)
+                     ^^^
+  shared variables:  { EXPECTED_VOTES: [ 3, 0 ], NUM_CANDIDATES: 2, NUM_CITIZENS: 3, WINNER: 0, e: { "candidates": [ 0, 0 ], "citizens": [ { "voted": False, "voted_for": -1 }, { "voted": False, "voted_for": -1 }, { "voted": False, "voted_for": -1 } ], "locks_can": [ False, False ], "locks_cit": [ False, False, False ] }, number_of_spawned_threads: 4, threads_executed: 0 }
+  stack:             [{:}]
+
+Step 105:
+  program counter:   1303
+  hvm code:          Jump 1442
+  explanation:       jump over method definition: set program counter to 1442
+  start statement:   line=14 column=1
+  end statement:     line=14 column=15
+  source code:       def complete():
+                     ^^^
+
+Step 106:
+  program counter:   1442
+  hvm code:          Push PC(1313)
+  explanation:       push program counter constant 1313 ("test_vote")
+  start statement:   line=39 column=1
+  end statement:     line=39 column=25
+  source code:       spawn test_vote(?e, 0, 0)
+                           ^^^^^^^^^
+  stack:             [{:}, PC(1313)]
+
+Step 107:
+  program counter:   1443
+  hvm code:          Push ()
+  explanation:       building a tuple: push constant ()
+  source code:       spawn test_vote(?e, 0, 0)
+                                     ^^^^^^^^
+  stack:             [{:}, PC(1313), []]
+
+Step 108:
+  program counter:   1444
+  hvm code:          Push ?e
+  explanation:       push constant ?e
+  source code:       spawn test_vote(?e, 0, 0)
+                                      ^
+  stack:             [{:}, PC(1313), [], ?e]
+
+Step 109:
+  program counter:   1445
+  hvm code:          2-ary ListAdd
+  explanation:       pop 2 values (?e, []); insert first value into the second; push result ([?e])
+  source code:       spawn test_vote(?e, 0, 0)
+                                     ^^^^^^^^
+  stack:             [{:}, PC(1313), [ ?e ]]
+
+Step 110:
+  program counter:   1446
+  hvm code:          Push 0
+  explanation:       push constant 0
+  source code:       spawn test_vote(?e, 0, 0)
+                                         ^
+  stack:             [{:}, PC(1313), [ ?e ], 0]
+
+Step 111:
+  program counter:   1447
+  hvm code:          2-ary ListAdd
+  explanation:       pop 2 values (0, [?e]); insert first value into the second; push result ([?e, 0])
+  source code:       spawn test_vote(?e, 0, 0)
+                                     ^^^^^^^^
+  stack:             [{:}, PC(1313), [ ?e, 0 ]]
+
+Step 112:
+  program counter:   1448
+  hvm code:          Push 0
+  explanation:       push constant 0
+  source code:       spawn test_vote(?e, 0, 0)
+                                            ^
+  stack:             [{:}, PC(1313), [ ?e, 0 ], 0]
+
+Step 113:
+  program counter:   1449
+  hvm code:          2-ary ListAdd
+  explanation:       pop 2 values (0, [?e, 0]); insert first value into the second; push result ([?e, 0, 0])
+  source code:       spawn test_vote(?e, 0, 0)
+                                     ^^^^^^^^
+  stack:             [{:}, PC(1313), [ ?e, 0, 0 ]]
+
+Step 114:
+  program counter:   1450
+  hvm code:          Push {:}
+  explanation:       push constant {:}
+  source code:       spawn test_vote(?e, 0, 0)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  stack:             [{:}, PC(1313), [ ?e, 0, 0 ], {:}]
+
+Step 115:
+  program counter:   1451
+  hvm code:          Spawn
+  explanation:       pop thread-local state ({:}), argument ([?e, 0, 0]), and program counter (1313: "test_vote"), and spawn thread
+  start expression:  line=39 column=1
+  end expression:    line=39 column=25
+  stack:             [{:}]
+
+Step 116:
+  program counter:   1452
+  hvm code:          Push PC(1313)
+  explanation:       push program counter constant 1313 ("test_vote")
+  start statement:   line=40 column=1
+  end statement:     line=40 column=25
+  source code:       spawn test_vote(?e, 1, 1)
+                           ^^^^^^^^^
+  stack:             [{:}, PC(1313)]
+
+Step 117:
+  program counter:   1453
+  hvm code:          Push ()
+  explanation:       building a tuple: push constant ()
+  source code:       spawn test_vote(?e, 1, 1)
+                                     ^^^^^^^^
+  stack:             [{:}, PC(1313), []]
+
+Step 118:
+  program counter:   1454
+  hvm code:          Push ?e
+  explanation:       push constant ?e
+  source code:       spawn test_vote(?e, 1, 1)
+                                      ^
+  stack:             [{:}, PC(1313), [], ?e]
+
+Step 119:
+  program counter:   1455
+  hvm code:          2-ary ListAdd
+  explanation:       pop 2 values (?e, []); insert first value into the second; push result ([?e])
+  source code:       spawn test_vote(?e, 1, 1)
+                                     ^^^^^^^^
+  stack:             [{:}, PC(1313), [ ?e ]]
+
+Step 120:
+  program counter:   1456
+  hvm code:          Push 1
+  explanation:       push constant 1
+  source code:       spawn test_vote(?e, 1, 1)
+                                         ^
+  stack:             [{:}, PC(1313), [ ?e ], 1]
+
+Step 121:
+  program counter:   1457
+  hvm code:          2-ary ListAdd
+  explanation:       pop 2 values (1, [?e]); insert first value into the second; push result ([?e, 1])
+  source code:       spawn test_vote(?e, 1, 1)
+                                     ^^^^^^^^
+  stack:             [{:}, PC(1313), [ ?e, 1 ]]
+
+Step 122:
+  program counter:   1458
+  hvm code:          Push 1
+  explanation:       push constant 1
+  source code:       spawn test_vote(?e, 1, 1)
+                                            ^
+  stack:             [{:}, PC(1313), [ ?e, 1 ], 1]
+
+Step 123:
+  program counter:   1459
+  hvm code:          2-ary ListAdd
+  explanation:       pop 2 values (1, [?e, 1]); insert first value into the second; push result ([?e, 1, 1])
+  source code:       spawn test_vote(?e, 1, 1)
+                                     ^^^^^^^^
+  stack:             [{:}, PC(1313), [ ?e, 1, 1 ]]
+
+Step 124:
+  program counter:   1460
+  hvm code:          Push {:}
+  explanation:       push constant {:}
+  source code:       spawn test_vote(?e, 1, 1)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  stack:             [{:}, PC(1313), [ ?e, 1, 1 ], {:}]
+
+Step 125:
+  program counter:   1461
+  hvm code:          Spawn
+  explanation:       pop thread-local state ({:}), argument ([?e, 1, 1]), and program counter (1313: "test_vote"), and spawn thread
+  start expression:  line=40 column=1
+  end expression:    line=40 column=25
+  stack:             [{:}]
+
+Step 126:
+  program counter:   1462
+  hvm code:          Push PC(1313)
+  explanation:       push program counter constant 1313 ("test_vote")
+  start statement:   line=41 column=1
+  end statement:     line=41 column=25
+  source code:       spawn test_vote(?e, 1, 1)
+                           ^^^^^^^^^
+  stack:             [{:}, PC(1313)]
+
+Step 127:
+  program counter:   1463
+  hvm code:          Push ()
+  explanation:       building a tuple: push constant ()
+  source code:       spawn test_vote(?e, 1, 1)
+                                     ^^^^^^^^
+  stack:             [{:}, PC(1313), []]
+
+Step 128:
+  program counter:   1464
+  hvm code:          Push ?e
+  explanation:       push constant ?e
+  source code:       spawn test_vote(?e, 1, 1)
+                                      ^
+  stack:             [{:}, PC(1313), [], ?e]
+
+Step 129:
+  program counter:   1465
+  hvm code:          2-ary ListAdd
+  explanation:       pop 2 values (?e, []); insert first value into the second; push result ([?e])
+  source code:       spawn test_vote(?e, 1, 1)
+                                     ^^^^^^^^
+  stack:             [{:}, PC(1313), [ ?e ]]
+
+Step 130:
+  program counter:   1466
+  hvm code:          Push 1
+  explanation:       push constant 1
+  source code:       spawn test_vote(?e, 1, 1)
+                                         ^
+  stack:             [{:}, PC(1313), [ ?e ], 1]
+
+Step 131:
+  program counter:   1467
+  hvm code:          2-ary ListAdd
+  explanation:       pop 2 values (1, [?e]); insert first value into the second; push result ([?e, 1])
+  source code:       spawn test_vote(?e, 1, 1)
+                                     ^^^^^^^^
+  stack:             [{:}, PC(1313), [ ?e, 1 ]]
+
+Step 132:
+  program counter:   1468
+  hvm code:          Push 1
+  explanation:       push constant 1
+  source code:       spawn test_vote(?e, 1, 1)
+                                            ^
+  stack:             [{:}, PC(1313), [ ?e, 1 ], 1]
+
+Step 133:
+  program counter:   1469
+  hvm code:          2-ary ListAdd
+  explanation:       pop 2 values (1, [?e, 1]); insert first value into the second; push result ([?e, 1, 1])
+  source code:       spawn test_vote(?e, 1, 1)
+                                     ^^^^^^^^
+  stack:             [{:}, PC(1313), [ ?e, 1, 1 ]]
+
+Step 134:
+  program counter:   1470
+  hvm code:          Push {:}
+  explanation:       push constant {:}
+  source code:       spawn test_vote(?e, 1, 1)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  stack:             [{:}, PC(1313), [ ?e, 1, 1 ], {:}]
+
+Step 135:
+  program counter:   1471
+  hvm code:          Spawn
+  explanation:       pop thread-local state ({:}), argument ([?e, 1, 1]), and program counter (1313: "test_vote"), and spawn thread
+  start expression:  line=41 column=1
+  end expression:    line=41 column=25
+  stack:             [{:}]
+
+Step 136:
+  program counter:   1472
+  hvm code:          Push PC(1333)
+  explanation:       push program counter constant 1333 ("test_withdraw")
+  start statement:   line=42 column=1
+  end statement:     line=42 column=32
+  source code:       spawn test_withdraw(?e, 0, 1, 2)
+                           ^^^^^^^^^^^^^
+  stack:             [{:}, PC(1333)]
+
+Step 137:
+  program counter:   1473
+  hvm code:          Push ()
+  explanation:       building a tuple: push constant ()
+  source code:       spawn test_withdraw(?e, 0, 1, 2)
+                                         ^^^^^^^^^^^
+  stack:             [{:}, PC(1333), []]
+
+Step 138:
+  program counter:   1474
+  hvm code:          Push ?e
+  explanation:       push constant ?e
+  source code:       spawn test_withdraw(?e, 0, 1, 2)
+                                          ^
+  stack:             [{:}, PC(1333), [], ?e]
+
+Step 139:
+  program counter:   1475
+  hvm code:          2-ary ListAdd
+  explanation:       pop 2 values (?e, []); insert first value into the second; push result ([?e])
+  source code:       spawn test_withdraw(?e, 0, 1, 2)
+                                         ^^^^^^^^^^^
+  stack:             [{:}, PC(1333), [ ?e ]]
+
+Step 140:
+  program counter:   1476
+  hvm code:          Push 0
+  explanation:       push constant 0
+  source code:       spawn test_withdraw(?e, 0, 1, 2)
+                                             ^
+  stack:             [{:}, PC(1333), [ ?e ], 0]
+
+Step 141:
+  program counter:   1477
+  hvm code:          2-ary ListAdd
+  explanation:       pop 2 values (0, [?e]); insert first value into the second; push result ([?e, 0])
+  source code:       spawn test_withdraw(?e, 0, 1, 2)
+                                         ^^^^^^^^^^^
+  stack:             [{:}, PC(1333), [ ?e, 0 ]]
+
+Step 142:
+  program counter:   1478
+  hvm code:          Push 1
+  explanation:       push constant 1
+  source code:       spawn test_withdraw(?e, 0, 1, 2)
+                                                ^
+  stack:             [{:}, PC(1333), [ ?e, 0 ], 1]
+
+Step 143:
+  program counter:   1479
+  hvm code:          2-ary ListAdd
+  explanation:       pop 2 values (1, [?e, 0]); insert first value into the second; push result ([?e, 0, 1])
+  source code:       spawn test_withdraw(?e, 0, 1, 2)
+                                         ^^^^^^^^^^^
+  stack:             [{:}, PC(1333), [ ?e, 0, 1 ]]
+
+Step 144:
+  program counter:   1480
+  hvm code:          Push 2
+  explanation:       push constant 2
+  source code:       spawn test_withdraw(?e, 0, 1, 2)
+                                                   ^
+  stack:             [{:}, PC(1333), [ ?e, 0, 1 ], 2]
+
+Step 145:
+  program counter:   1481
+  hvm code:          2-ary ListAdd
+  explanation:       pop 2 values (2, [?e, 0, 1]); insert first value into the second; push result ([?e, 0, 1, 2])
+  source code:       spawn test_withdraw(?e, 0, 1, 2)
+                                         ^^^^^^^^^^^
+  stack:             [{:}, PC(1333), [ ?e, 0, 1, 2 ]]
+
+Step 146:
+  program counter:   1482
+  hvm code:          Push {:}
+  explanation:       push constant {:}
+  source code:       spawn test_withdraw(?e, 0, 1, 2)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  stack:             [{:}, PC(1333), [ ?e, 0, 1, 2 ], {:}]
+
+Step 147:
+  program counter:   1483
+  hvm code:          Spawn
+  explanation:       pop thread-local state ({:}), argument ([?e, 0, 1, 2]), and program counter (1333: "test_withdraw"), and spawn thread
+  start expression:  line=42 column=1
+  end expression:    line=42 column=32
+  stack:             [{:}]
+
+Step 148:
+  program counter:   1484
+  hvm code:          Push PC(1372)
+  explanation:       push program counter constant 1372 ("end_test")
+  start statement:   line=44 column=1
+  end statement:     line=44 column=16
+  source code:       spawn end_test()
+                           ^^^^^^^^
+  stack:             [{:}, PC(1372)]
+
+Step 149:
+  program counter:   1485
+  hvm code:          Push ()
+  explanation:       push constant ()
+  source code:       spawn end_test()
+                                   ^^
+  stack:             [{:}, PC(1372), []]
+
+Step 150:
+  program counter:   1486
+  hvm code:          Push {:}
+  explanation:       push constant {:}
+  source code:       spawn end_test()
+                     ^^^^^^^^^^^^^^^^
+  stack:             [{:}, PC(1372), [], {:}]
+
+Step 151:
+  program counter:   1487
+  hvm code:          Spawn
+  explanation:       pop thread-local state ({:}), argument ([]), and program counter (1372: "end_test"), and spawn thread
+  start expression:  line=44 column=1
+  end expression:    line=44 column=16
+  stack:             [{:}]
+
+Step 152:
+  program counter:   1488
+  hvm code:          Return
+  explanation:       push result (None) and restore method variables
+  start statement:   line=1 column=1
+  end statement:     line=44 column=23
+  source code:       from synch import Lock, acquire, release
+  method variables:  { }
+  new mode:          terminated
+  stack:             []
+
+================================================
+Running thread T4: test_withdraw(?e, 0, 1, 2)
+mode:  runnable
+stack: ['[ ?e, 0, 1, 2 ]']
+other threads:
+  T0: pc=1488 terminated atomic __init__()
+  T1: pc=1313 runnable test_vote(?e, 0, 0)
+  T2: pc=1313 runnable test_vote(?e, 1, 1)
+  T3: pc=1313 runnable test_vote(?e, 1, 1)
+  T5: pc=1372 runnable end_test()
+shared variables:
+  EXPECTED_VOTES: [ 3, 0 ]
+  NUM_CANDIDATES: 2
+  NUM_CITIZENS: 3
+  WINNER: 0
+  e: { "candidates": [ 0, 0 ], "citizens": [ { "voted": False, "voted_for": -1 }, { "voted": False, "voted_for": -1 }, { "voted": False, "voted_for": -1 } ], "locks_can": [ False, False ], "locks_cit": [ False, False, False ] }
+  number_of_spawned_threads: 4
+  threads_executed: 0
+state id: 3
+================================================
+
+Step 153:
+  program counter:   1333
+  hvm code:          Frame test_withdraw(e, first_candidate, second_candidate, citizen_idx)
+  explanation:       method "test_withdraw" with argument (e, first_candidate, second_candidate, citizen_idx) set to [?e, 0, 1, 2]
+  start statement:   line=22 column=1
+  end statement:     line=22 column=69
+  source code:       def test_withdraw(e, first_candidate, second_candidate, citizen_idx):
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  method variables:  { citizen_idx: 2, e: ?e, first_candidate: 0, result: None, second_candidate: 1 }
+  call trace:        test_withdraw(?e, 0, 1, 2)
+  stack:             [{:}]
+
+Step 154:
+  program counter:   1334
+  hvm code:          Push PC(980)
+  explanation:       push program counter constant 980 ("vote")
+  start statement:   line=23 column=5
+  end statement:     line=23 column=50
+  source code:       election.vote(e, first_candidate, citizen_idx)
+                     ^^^^^^^^^^^^^
+  stack:             [{:}, PC(980)]
+
+Step 155:
+  program counter:   1335
+  hvm code:          Push ()
+  explanation:       building a tuple: push constant ()
+  source code:       election.vote(e, first_candidate, citizen_idx)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  stack:             [{:}, PC(980), []]
+
+Step 156:
+  program counter:   1336
+  hvm code:          LoadVar e
+  explanation:       push value (?e) of variable "e"
+  source code:       election.vote(e, first_candidate, citizen_idx)
+                                   ^
+  stack:             [{:}, PC(980), [], ?e]
+
+Step 157:
+  program counter:   1337
+  hvm code:          2-ary ListAdd
+  explanation:       pop 2 values (?e, []); insert first value into the second; push result ([?e])
+  source code:       election.vote(e, first_candidate, citizen_idx)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  stack:             [{:}, PC(980), [ ?e ]]
+
+Step 158:
+  program counter:   1338
+  hvm code:          LoadVar first_candidate
+  explanation:       push value (0) of variable "first_candidate"
+  source code:       election.vote(e, first_candidate, citizen_idx)
+                                      ^^^^^^^^^^^^^^^
+  stack:             [{:}, PC(980), [ ?e ], 0]
+
+Step 159:
+  program counter:   1339
+  hvm code:          DelVar first_candidate
+  explanation:       delete method variable first_candidate
+  start expression:  line=23 column=22
+  end expression:    line=23 column=36
+  method variables:  { citizen_idx: 2, e: ?e, result: None, second_candidate: 1 }
+
+Step 160:
+  program counter:   1340
+  hvm code:          2-ary ListAdd
+  explanation:       pop 2 values (0, [?e]); insert first value into the second; push result ([?e, 0])
+  source code:       election.vote(e, first_candidate, citizen_idx)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  stack:             [{:}, PC(980), [ ?e, 0 ]]
+
+Step 161:
+  program counter:   1341
+  hvm code:          LoadVar citizen_idx
+  explanation:       push value (2) of variable "citizen_idx"
+  source code:       election.vote(e, first_candidate, citizen_idx)
+                                                       ^^^^^^^^^^^
+  stack:             [{:}, PC(980), [ ?e, 0 ], 2]
+
+Step 162:
+  program counter:   1342
+  hvm code:          2-ary ListAdd
+  explanation:       pop 2 values (2, [?e, 0]); insert first value into the second; push result ([?e, 0, 2])
+  source code:       election.vote(e, first_candidate, citizen_idx)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  stack:             [{:}, PC(980), [ ?e, 0, 2 ]]
+
+Step 163:
+  program counter:   1343
+  hvm code:          Apply
+  explanation:       pop an argument ([?e, 0, 2]) and a program counter value (980: "vote") and call the method
+  source code:       election.vote(e, first_candidate, citizen_idx)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  call trace:        test_withdraw(?e, 0, 1, 2) --> vote(?e, 0, 2)
+  stack:             [{:}, 21506, [ ?e, 0, 2 ]]
+
+Step 164:
+  program counter:   980
+  hvm code:          Frame vote(election, candidate, citizen)
+  explanation:       method "vote" with argument (election, candidate, citizen) set to [?e, 0, 2]
+  file:              electionimpl.hny
+  start statement:   line=14 column=1
+  end statement:     line=14 column=39
+  source code:       def vote(election, candidate, citizen):
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  method variables:  { candidate: 0, citizen: 2, election: ?e, result: None }
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }]
+
+Step 165:
+  program counter:   981
+  hvm code:          DelVar result
+  explanation:       delete method variable result
+  start statement:   line=16 column=5
+  end statement:     line=16 column=46
+  source code:       acquire(?(election->locks_can[candidate]))
+                     ^^^^^^^
+  method variables:  { candidate: 0, citizen: 2, election: ?e }
+
+Step 166:
+  program counter:   982
+  hvm code:          Push PC(695)
+  explanation:       push program counter constant 695 ("acquire")
+  start expression:  line=16 column=5
+  end expression:    line=16 column=11
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, PC(695)]
+
+Step 167:
+  program counter:   983
+  hvm code:          LoadVar election
+  explanation:       push value (?e) of variable "election"
+  source code:       acquire(?(election->locks_can[candidate]))
+                               ^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, PC(695), ?e]
+
+Step 168:
+  program counter:   984
+  hvm code:          Push "locks_can"
+  explanation:       push constant "locks_can"
+  source code:       acquire(?(election->locks_can[candidate]))
+                                         ^^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, PC(695), ?e, "locks_can"]
+
+Step 169:
+  program counter:   985
+  hvm code:          Address
+  explanation:       pop a key ("locks_can") and an address (?e) and push the combined address (?e["locks_can"])
+  source code:       acquire(?(election->locks_can[candidate]))
+                               ^^^^^^^^^^^^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, PC(695), ?e["locks_can"]]
+
+Step 170:
+  program counter:   986
+  hvm code:          LoadVar candidate
+  explanation:       push value (0) of variable "candidate"
+  source code:       acquire(?(election->locks_can[candidate]))
+                                                   ^^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, PC(695), ?e["locks_can"], 0]
+
+Step 171:
+  program counter:   987
+  hvm code:          Address
+  explanation:       pop a key (0) and an address (?e["locks_can"]) and push the combined address (?e["locks_can"][0])
+  source code:       acquire(?(election->locks_can[candidate]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, PC(695), ?e["locks_can"][0]]
+
+Step 172:
+  program counter:   988
+  hvm code:          Apply
+  explanation:       pop an argument (?e["locks_can"][0]) and a program counter value (695: "acquire") and call the method
+  source code:       acquire(?(election->locks_can[candidate]))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  call trace:        test_withdraw(?e, 0, 1, 2) --> vote(?e, 0, 2) --> acquire(?e["locks_can"][0])
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, 15826, ?e["locks_can"][0]]
+
+Step 173:
+  program counter:   695
+  hvm code:          Frame acquire(binsema)
+  explanation:       method "acquire" with argument binsema set to ?e["locks_can"][0]
+  file:              /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/harmony_model_checker/modules/synch.hny
+  start statement:   line=30 column=1
+  end statement:     line=30 column=21
+  source code:       def acquire(binsema):
+                     ^^^^^^^^^^^^^^^^^^^^^
+  method variables:  { binsema: ?e["locks_can"][0], result: None }
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, 15826, { "candidate": 0, "citizen": 2, "election": ?e }]
+
+Step 174:
+  program counter:   696
+  hvm code:          AtomicInc(lazy)
+  explanation:       increment atomic counter from 0 to 1: becomes atomic
+  start statement:   line=31 column=16
+  end statement:     line=33 column=6
+  source code:       atomically when not !binsema:
+  call trace:        test_withdraw(?e, 0, 1, 2) --> vote(?e, 0, 2) --> acquire(?e["locks_can"][0])
+
+Step 175:
+  program counter:   697
+  hvm code:          ReadonlyInc
+  explanation:       increment readonly counter from 0 to 1: becomes readonly
+  start expression:  line=31 column=16
+  end expression:    line=31 column=16
+
+Step 176:
+  program counter:   698
+  hvm code:          LoadVar binsema
+  explanation:       push value (?e["locks_can"][0]) of variable "binsema"
+  start statement:   line=31 column=16
+  end statement:     line=31 column=32
+  source code:       atomically when not !binsema:
+                                          ^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, 15826, { "candidate": 0, "citizen": 2, "election": ?e }, ?e["locks_can"][0]]
+
+Step 177:
+  program counter:   699
+  hvm code:          Load
+  explanation:       pop address of variable (?e["locks_can"][0]) and push value (False)
+  source code:       atomically when not !binsema:
+                                         ^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, 15826, { "candidate": 0, "citizen": 2, "election": ?e }, False]
+
+Step 178:
+  program counter:   700
+  hvm code:          1-ary not
+  explanation:       pop a value (False); logical not; push result (True)
+  source code:       atomically when not !binsema:
+                                     ^^^^^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, 15826, { "candidate": 0, "citizen": 2, "election": ?e }, True]
+
+Step 179:
+  program counter:   701
+  hvm code:          JumpCond False 703
+  explanation:       pop value (True), compare to False, and jump to 703 if the same
+  source code:       atomically when not !binsema:
+                                ^^^^^^^^^^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, 15826, { "candidate": 0, "citizen": 2, "election": ?e }]
+
+Step 180:
+  program counter:   702
+  hvm code:          Jump 706
+  explanation:       set program counter to 706
+  source code:       atomically when not !binsema:
+                                                ^
+
+Step 181:
+  program counter:   706
+  hvm code:          ReadonlyDec
+  explanation:       decrement readonly counter from 1 to 0: no longer readonly
+  source code:       atomically when not !binsema:
+                                ^^^^^^^^^^^^^^^^^
+
+Step 182:
+  program counter:   707
+  hvm code:          LoadVar binsema
+  explanation:       push value (?e["locks_can"][0]) of variable "binsema"
+  start statement:   line=32 column=9
+  end statement:     line=32 column=23
+  source code:       !binsema = True
+                      ^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, 15826, { "candidate": 0, "citizen": 2, "election": ?e }, ?e["locks_can"][0]]
+
+Step 183:
+  program counter:   708
+  hvm code:          DelVar binsema
+  explanation:       delete method variable binsema
+  start expression:  line=32 column=10
+  end expression:    line=32 column=16
+  method variables:  { result: None }
+
+Step 184:
+  program counter:   709
+  hvm code:          Push True
+  explanation:       push constant True
+  source code:       !binsema = True
+                                ^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, 15826, { "candidate": 0, "citizen": 2, "election": ?e }, ?e["locks_can"][0], True]
+
+Step 185:
+  program counter:   710
+  hvm code:          Store
+  explanation:       pop value (True) and address (?e["locks_can"][0]) and store
+  source code:       !binsema = True
+                     ^^^^^^^^^^
+  shared variables:  { EXPECTED_VOTES: [ 3, 0 ], NUM_CANDIDATES: 2, NUM_CITIZENS: 3, WINNER: 0, e: { "candidates": [ 0, 0 ], "citizens": [ { "voted": False, "voted_for": -1 }, { "voted": False, "voted_for": -1 }, { "voted": False, "voted_for": -1 } ], "locks_can": [ True, False ], "locks_cit": [ False, False, False ] }, number_of_spawned_threads: 4, threads_executed: 0 }
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, 15826, { "candidate": 0, "citizen": 2, "election": ?e }]
+
+Step 186:
+  program counter:   711
+  hvm code:          AtomicDec
+  explanation:       decrement atomic counter from 1 to 0: no longer atomic
+  start statement:   line=31 column=16
+  end statement:     line=31 column=32
+  source code:       atomically when not !binsema:
+                                ^^^^^^^^^^^^^^^^^
+
+Step 187:
+  program counter:   712
+  hvm code:          Return
+  explanation:       push result (None) and restore method variables
+  start statement:   line=30 column=1
+  end statement:     line=30 column=21
+  source code:       def acquire(binsema):
+                     ^^^^^^^^^^^^^^^^^^^^^
+  method variables:  { candidate: 0, citizen: 2, election: ?e }
+  call trace:        test_withdraw(?e, 0, 1, 2) --> vote(?e, 0, 2)
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, None]
+
+Step 188:
+  program counter:   989
+  hvm code:          Pop
+  explanation:       pop and discard value (None)
+  file:              electionimpl.hny
+  start statement:   line=16 column=5
+  end statement:     line=16 column=46
+  source code:       acquire(?(election->locks_can[candidate]))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }]
+
+Step 189:
+  program counter:   990
+  hvm code:          Push PC(695)
+  explanation:       push program counter constant 695 ("acquire")
+  start statement:   line=17 column=5
+  end statement:     line=17 column=44
+  source code:       acquire(?(election->locks_cit[citizen]))
+                     ^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, PC(695)]
+
+Step 190:
+  program counter:   991
+  hvm code:          LoadVar election
+  explanation:       push value (?e) of variable "election"
+  source code:       acquire(?(election->locks_cit[citizen]))
+                               ^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, PC(695), ?e]
+
+Step 191:
+  program counter:   992
+  hvm code:          Push "locks_cit"
+  explanation:       push constant "locks_cit"
+  source code:       acquire(?(election->locks_cit[citizen]))
+                                         ^^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, PC(695), ?e, "locks_cit"]
+
+Step 192:
+  program counter:   993
+  hvm code:          Address
+  explanation:       pop a key ("locks_cit") and an address (?e) and push the combined address (?e["locks_cit"])
+  source code:       acquire(?(election->locks_cit[citizen]))
+                               ^^^^^^^^^^^^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, PC(695), ?e["locks_cit"]]
+
+Step 193:
+  program counter:   994
+  hvm code:          LoadVar citizen
+  explanation:       push value (2) of variable "citizen"
+  source code:       acquire(?(election->locks_cit[citizen]))
+                                                   ^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, PC(695), ?e["locks_cit"], 2]
+
+Step 194:
+  program counter:   995
+  hvm code:          Address
+  explanation:       pop a key (2) and an address (?e["locks_cit"]) and push the combined address (?e["locks_cit"][2])
+  source code:       acquire(?(election->locks_cit[citizen]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, PC(695), ?e["locks_cit"][2]]
+
+Step 195:
+  program counter:   996
+  hvm code:          Apply
+  explanation:       pop an argument (?e["locks_cit"][2]) and a program counter value (695: "acquire") and call the method
+  source code:       acquire(?(election->locks_cit[citizen]))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  call trace:        test_withdraw(?e, 0, 1, 2) --> vote(?e, 0, 2) --> acquire(?e["locks_cit"][2])
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, 15954, ?e["locks_cit"][2]]
+
+Step 196:
+  program counter:   695
+  hvm code:          Frame acquire(binsema)
+  explanation:       method "acquire" with argument binsema set to ?e["locks_cit"][2]
+  file:              /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/harmony_model_checker/modules/synch.hny
+  start statement:   line=30 column=1
+  end statement:     line=30 column=21
+  source code:       def acquire(binsema):
+                     ^^^^^^^^^^^^^^^^^^^^^
+  method variables:  { binsema: ?e["locks_cit"][2], result: None }
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, 15954, { "candidate": 0, "citizen": 2, "election": ?e }]
+
+Step 197:
+  program counter:   696
+  hvm code:          AtomicInc(lazy)
+  explanation:       increment atomic counter from 0 to 1: becomes atomic
+  start statement:   line=31 column=16
+  end statement:     line=33 column=6
+  source code:       atomically when not !binsema:
+  call trace:        test_withdraw(?e, 0, 1, 2) --> vote(?e, 0, 2) --> acquire(?e["locks_cit"][2])
+
+Step 198:
+  program counter:   697
+  hvm code:          ReadonlyInc
+  explanation:       increment readonly counter from 0 to 1: becomes readonly
+  start expression:  line=31 column=16
+  end expression:    line=31 column=16
+
+Step 199:
+  program counter:   698
+  hvm code:          LoadVar binsema
+  explanation:       push value (?e["locks_cit"][2]) of variable "binsema"
+  start statement:   line=31 column=16
+  end statement:     line=31 column=32
+  source code:       atomically when not !binsema:
+                                          ^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, 15954, { "candidate": 0, "citizen": 2, "election": ?e }, ?e["locks_cit"][2]]
+
+Step 200:
+  program counter:   699
+  hvm code:          Load
+  explanation:       pop address of variable (?e["locks_cit"][2]) and push value (False)
+  source code:       atomically when not !binsema:
+                                         ^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, 15954, { "candidate": 0, "citizen": 2, "election": ?e }, False]
+
+Step 201:
+  program counter:   700
+  hvm code:          1-ary not
+  explanation:       pop a value (False); logical not; push result (True)
+  source code:       atomically when not !binsema:
+                                     ^^^^^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, 15954, { "candidate": 0, "citizen": 2, "election": ?e }, True]
+
+Step 202:
+  program counter:   701
+  hvm code:          JumpCond False 703
+  explanation:       pop value (True), compare to False, and jump to 703 if the same
+  source code:       atomically when not !binsema:
+                                ^^^^^^^^^^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, 15954, { "candidate": 0, "citizen": 2, "election": ?e }]
+
+Step 203:
+  program counter:   702
+  hvm code:          Jump 706
+  explanation:       set program counter to 706
+  source code:       atomically when not !binsema:
+                                                ^
+
+Step 204:
+  program counter:   706
+  hvm code:          ReadonlyDec
+  explanation:       decrement readonly counter from 1 to 0: no longer readonly
+  source code:       atomically when not !binsema:
+                                ^^^^^^^^^^^^^^^^^
+
+Step 205:
+  program counter:   707
+  hvm code:          LoadVar binsema
+  explanation:       push value (?e["locks_cit"][2]) of variable "binsema"
+  start statement:   line=32 column=9
+  end statement:     line=32 column=23
+  source code:       !binsema = True
+                      ^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, 15954, { "candidate": 0, "citizen": 2, "election": ?e }, ?e["locks_cit"][2]]
+
+Step 206:
+  program counter:   708
+  hvm code:          DelVar binsema
+  explanation:       delete method variable binsema
+  start expression:  line=32 column=10
+  end expression:    line=32 column=16
+  method variables:  { result: None }
+
+Step 207:
+  program counter:   709
+  hvm code:          Push True
+  explanation:       push constant True
+  source code:       !binsema = True
+                                ^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, 15954, { "candidate": 0, "citizen": 2, "election": ?e }, ?e["locks_cit"][2], True]
+
+Step 208:
+  program counter:   710
+  hvm code:          Store
+  explanation:       pop value (True) and address (?e["locks_cit"][2]) and store
+  source code:       !binsema = True
+                     ^^^^^^^^^^
+  shared variables:  { EXPECTED_VOTES: [ 3, 0 ], NUM_CANDIDATES: 2, NUM_CITIZENS: 3, WINNER: 0, e: { "candidates": [ 0, 0 ], "citizens": [ { "voted": False, "voted_for": -1 }, { "voted": False, "voted_for": -1 }, { "voted": False, "voted_for": -1 } ], "locks_can": [ True, False ], "locks_cit": [ False, False, True ] }, number_of_spawned_threads: 4, threads_executed: 0 }
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, 15954, { "candidate": 0, "citizen": 2, "election": ?e }]
+
+Step 209:
+  program counter:   711
+  hvm code:          AtomicDec
+  explanation:       decrement atomic counter from 1 to 0: no longer atomic
+  start statement:   line=31 column=16
+  end statement:     line=31 column=32
+  source code:       atomically when not !binsema:
+                                ^^^^^^^^^^^^^^^^^
+
+Step 210:
+  program counter:   712
+  hvm code:          Return
+  explanation:       push result (None) and restore method variables
+  start statement:   line=30 column=1
+  end statement:     line=30 column=21
+  source code:       def acquire(binsema):
+                     ^^^^^^^^^^^^^^^^^^^^^
+  method variables:  { candidate: 0, citizen: 2, election: ?e }
+  call trace:        test_withdraw(?e, 0, 1, 2) --> vote(?e, 0, 2)
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, None]
+
+Step 211:
+  program counter:   997
+  hvm code:          Pop
+  explanation:       pop and discard value (None)
+  file:              electionimpl.hny
+  start statement:   line=17 column=5
+  end statement:     line=17 column=44
+  source code:       acquire(?(election->locks_cit[citizen]))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }]
+
+Step 212:
+  program counter:   998
+  hvm code:          LoadVar election
+  explanation:       push value (?e) of variable "election"
+  start statement:   line=20 column=5
+  end statement:     line=20 column=50
+  source code:       if election->citizens[citizen].voted == False:
+                        ^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, ?e]
+
+Step 213:
+  program counter:   999
+  hvm code:          Push "citizens"
+  explanation:       push constant "citizens"
+  source code:       if election->citizens[citizen].voted == False:
+                                  ^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, ?e, "citizens"]
+
+Step 214:
+  program counter:   1000
+  hvm code:          Address
+  explanation:       pop a key ("citizens") and an address (?e) and push the combined address (?e["citizens"])
+  source code:       if election->citizens[citizen].voted == False:
+                        ^^^^^^^^^^^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, ?e["citizens"]]
+
+Step 215:
+  program counter:   1001
+  hvm code:          LoadVar citizen
+  explanation:       push value (2) of variable "citizen"
+  source code:       if election->citizens[citizen].voted == False:
+                                           ^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, ?e["citizens"], 2]
+
+Step 216:
+  program counter:   1002
+  hvm code:          Address
+  explanation:       pop a key (2) and an address (?e["citizens"]) and push the combined address (?e["citizens"][2])
+  source code:       if election->citizens[citizen].voted == False:
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, ?e["citizens"][2]]
+
+Step 217:
+  program counter:   1003
+  hvm code:          Push "voted"
+  explanation:       push constant "voted"
+  source code:       if election->citizens[citizen].voted == False:
+                                                   ^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, ?e["citizens"][2], "voted"]
+
+Step 218:
+  program counter:   1004
+  hvm code:          Address
+  explanation:       pop a key ("voted") and an address (?e["citizens"][2]) and push the combined address (?e["citizens"][2]["voted"])
+  source code:       if election->citizens[citizen].voted == False:
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, ?e["citizens"][2]["voted"]]
+
+Step 219:
+  program counter:   1005
+  hvm code:          Load
+  explanation:       pop address of variable (?e["citizens"][2]["voted"]) and push value (False)
+  start expression:  line=20 column=8
+  end expression:    line=20 column=40
+  call trace:        test_withdraw(?e, 0, 1, 2) --> vote(?e, 0, 2)
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, False]
+
+Step 220:
+  program counter:   1006
+  hvm code:          Push False
+  explanation:       push constant False
+  source code:       if election->citizens[citizen].voted == False:
+                                                             ^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, False, False]
+
+Step 221:
+  program counter:   1007
+  hvm code:          2-ary ==
+  explanation:       pop 2 values (False, False); check if both values are the same; push result (True)
+  source code:       if election->citizens[citizen].voted == False:
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, True]
+
+Step 222:
+  program counter:   1008
+  hvm code:          JumpCond False 1039
+  explanation:       pop value (True), compare to False, and jump to 1039 if the same
+  source code:       if election->citizens[citizen].voted == False:
+                     ^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }]
+
+Step 223:
+  program counter:   1009
+  hvm code:          LoadVar election
+  explanation:       push value (?e) of variable "election"
+  start statement:   line=21 column=9
+  end statement:     line=21 column=44
+  source code:       election->candidates[candidate] += 1
+                     ^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, ?e]
+
+Step 224:
+  program counter:   1010
+  hvm code:          Push "candidates"
+  explanation:       push constant "candidates"
+  source code:       election->candidates[candidate] += 1
+                               ^^^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, ?e, "candidates"]
+
+Step 225:
+  program counter:   1011
+  hvm code:          Address
+  explanation:       pop a key ("candidates") and an address (?e) and push the combined address (?e["candidates"])
+  source code:       election->candidates[candidate] += 1
+                     ^^^^^^^^^^^^^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, ?e["candidates"]]
+
+Step 226:
+  program counter:   1012
+  hvm code:          LoadVar candidate
+  explanation:       push value (0) of variable "candidate"
+  source code:       election->candidates[candidate] += 1
+                                          ^^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, ?e["candidates"], 0]
+
+Step 227:
+  program counter:   1013
+  hvm code:          Address
+  explanation:       pop a key (0) and an address (?e["candidates"]) and push the combined address (?e["candidates"][0])
+  source code:       election->candidates[candidate] += 1
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, ?e["candidates"][0]]
+
+Step 228:
+  program counter:   1014
+  hvm code:          Dup
+  explanation:       push a copy of the top value on the stack
+  source code:       election->candidates[candidate] += 1
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, ?e["candidates"][0], ?e["candidates"][0]]
+
+Step 229:
+  program counter:   1015
+  hvm code:          Load
+  explanation:       pop address of variable (?e["candidates"][0]) and push value (0)
+  start expression:  line=21 column=9
+  end expression:    line=21 column=44
+  call trace:        test_withdraw(?e, 0, 1, 2) --> vote(?e, 0, 2)
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, ?e["candidates"][0], 0]
+
+Step 230:
+  program counter:   1016
+  hvm code:          Push 1
+  explanation:       push constant 1
+  source code:       election->candidates[candidate] += 1
+                                                        ^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, ?e["candidates"][0], 0, 1]
+
+Step 231:
+  program counter:   1017
+  hvm code:          2-ary +
+  explanation:       pop 2 values (1, 0); add the integers; push result (1)
+  source code:       election->candidates[candidate] += 1
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, ?e["candidates"][0], 1]
+
+Step 232:
+  program counter:   1018
+  hvm code:          Store
+  explanation:       pop value (1) and address (?e["candidates"][0]) and store
+  source code:       election->candidates[candidate] += 1
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  shared variables:  { EXPECTED_VOTES: [ 3, 0 ], NUM_CANDIDATES: 2, NUM_CITIZENS: 3, WINNER: 0, e: { "candidates": [ 1, 0 ], "citizens": [ { "voted": False, "voted_for": -1 }, { "voted": False, "voted_for": -1 }, { "voted": False, "voted_for": -1 } ], "locks_can": [ True, False ], "locks_cit": [ False, False, True ] }, number_of_spawned_threads: 4, threads_executed: 0 }
+  call trace:        test_withdraw(?e, 0, 1, 2) --> vote(?e, 0, 2)
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }]
+
+Step 233:
+  program counter:   1019
+  hvm code:          LoadVar election
+  explanation:       push value (?e) of variable "election"
+  start statement:   line=22 column=9
+  end statement:     line=22 column=48
+  source code:       election->citizens[citizen].voted = True
+                     ^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, ?e]
+
+Step 234:
+  program counter:   1020
+  hvm code:          Push "citizens"
+  explanation:       push constant "citizens"
+  source code:       election->citizens[citizen].voted = True
+                               ^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, ?e, "citizens"]
+
+Step 235:
+  program counter:   1021
+  hvm code:          Address
+  explanation:       pop a key ("citizens") and an address (?e) and push the combined address (?e["citizens"])
+  source code:       election->citizens[citizen].voted = True
+                     ^^^^^^^^^^^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, ?e["citizens"]]
+
+Step 236:
+  program counter:   1022
+  hvm code:          LoadVar citizen
+  explanation:       push value (2) of variable "citizen"
+  source code:       election->citizens[citizen].voted = True
+                                        ^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, ?e["citizens"], 2]
+
+Step 237:
+  program counter:   1023
+  hvm code:          Address
+  explanation:       pop a key (2) and an address (?e["citizens"]) and push the combined address (?e["citizens"][2])
+  source code:       election->citizens[citizen].voted = True
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, ?e["citizens"][2]]
+
+Step 238:
+  program counter:   1024
+  hvm code:          Push "voted"
+  explanation:       push constant "voted"
+  source code:       election->citizens[citizen].voted = True
+                                                ^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, ?e["citizens"][2], "voted"]
+
+Step 239:
+  program counter:   1025
+  hvm code:          Address
+  explanation:       pop a key ("voted") and an address (?e["citizens"][2]) and push the combined address (?e["citizens"][2]["voted"])
+  source code:       election->citizens[citizen].voted = True
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, ?e["citizens"][2]["voted"]]
+
+Step 240:
+  program counter:   1026
+  hvm code:          Push True
+  explanation:       push constant True
+  source code:       election->citizens[citizen].voted = True
+                                                         ^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, ?e["citizens"][2]["voted"], True]
+
+Step 241:
+  program counter:   1027
+  hvm code:          Store
+  explanation:       pop value (True) and address (?e["citizens"][2]["voted"]) and store
+  source code:       election->citizens[citizen].voted = True
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  shared variables:  { EXPECTED_VOTES: [ 3, 0 ], NUM_CANDIDATES: 2, NUM_CITIZENS: 3, WINNER: 0, e: { "candidates": [ 1, 0 ], "citizens": [ { "voted": False, "voted_for": -1 }, { "voted": False, "voted_for": -1 }, { "voted": True, "voted_for": -1 } ], "locks_can": [ True, False ], "locks_cit": [ False, False, True ] }, number_of_spawned_threads: 4, threads_executed: 0 }
+  call trace:        test_withdraw(?e, 0, 1, 2) --> vote(?e, 0, 2)
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }]
+
+Step 242:
+  program counter:   1028
+  hvm code:          LoadVar election
+  explanation:       push value (?e) of variable "election"
+  start statement:   line=23 column=9
+  end statement:     line=23 column=57
+  source code:       election->citizens[citizen].voted_for = candidate
+                     ^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, ?e]
+
+Step 243:
+  program counter:   1029
+  hvm code:          Push "citizens"
+  explanation:       push constant "citizens"
+  source code:       election->citizens[citizen].voted_for = candidate
+                               ^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, ?e, "citizens"]
+
+Step 244:
+  program counter:   1030
+  hvm code:          Address
+  explanation:       pop a key ("citizens") and an address (?e) and push the combined address (?e["citizens"])
+  source code:       election->citizens[citizen].voted_for = candidate
+                     ^^^^^^^^^^^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, ?e["citizens"]]
+
+Step 245:
+  program counter:   1031
+  hvm code:          LoadVar citizen
+  explanation:       push value (2) of variable "citizen"
+  source code:       election->citizens[citizen].voted_for = candidate
+                                        ^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, ?e["citizens"], 2]
+
+Step 246:
+  program counter:   1032
+  hvm code:          Address
+  explanation:       pop a key (2) and an address (?e["citizens"]) and push the combined address (?e["citizens"][2])
+  source code:       election->citizens[citizen].voted_for = candidate
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, ?e["citizens"][2]]
+
+Step 247:
+  program counter:   1033
+  hvm code:          Push "voted_for"
+  explanation:       push constant "voted_for"
+  source code:       election->citizens[citizen].voted_for = candidate
+                                                ^^^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, ?e["citizens"][2], "voted_for"]
+
+Step 248:
+  program counter:   1034
+  hvm code:          Address
+  explanation:       pop a key ("voted_for") and an address (?e["citizens"][2]) and push the combined address (?e["citizens"][2]["voted_for"])
+  source code:       election->citizens[citizen].voted_for = candidate
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, ?e["citizens"][2]["voted_for"]]
+
+Step 249:
+  program counter:   1035
+  hvm code:          LoadVar candidate
+  explanation:       push value (0) of variable "candidate"
+  source code:       election->citizens[citizen].voted_for = candidate
+                                                             ^^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, ?e["citizens"][2]["voted_for"], 0]
+
+Step 250:
+  program counter:   1036
+  hvm code:          Store
+  explanation:       pop value (0) and address (?e["citizens"][2]["voted_for"]) and store
+  source code:       election->citizens[citizen].voted_for = candidate
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  shared variables:  { EXPECTED_VOTES: [ 3, 0 ], NUM_CANDIDATES: 2, NUM_CITIZENS: 3, WINNER: 0, e: { "candidates": [ 1, 0 ], "citizens": [ { "voted": False, "voted_for": -1 }, { "voted": False, "voted_for": -1 }, { "voted": True, "voted_for": 0 } ], "locks_can": [ True, False ], "locks_cit": [ False, False, True ] }, number_of_spawned_threads: 4, threads_executed: 0 }
+  call trace:        test_withdraw(?e, 0, 1, 2) --> vote(?e, 0, 2)
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }]
+
+Step 251:
+  program counter:   1037
+  hvm code:          Push True
+  explanation:       push constant True
+  start statement:   line=24 column=9
+  end statement:     line=24 column=21
+  source code:       result = True
+                              ^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, True]
+
+Step 252:
+  program counter:   1038
+  hvm code:          StoreVar result
+  explanation:       pop value (True) and store locally in variable "result"
+  source code:       result = True
+                     ^^^^^^^^
+  method variables:  { candidate: 0, citizen: 2, election: ?e, result: True }
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }]
+
+Step 253:
+  program counter:   1039
+  hvm code:          DelVar result
+  explanation:       delete method variable result
+  start statement:   line=25 column=5
+  end statement:     line=25 column=18
+  source code:       result = False
+                              ^^^^^
+  method variables:  { candidate: 0, citizen: 2, election: ?e }
+
+Step 254:
+  program counter:   1040
+  hvm code:          Push False
+  explanation:       push constant False
+  start expression:  line=25 column=14
+  end expression:    line=25 column=18
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, False]
+
+Step 255:
+  program counter:   1041
+  hvm code:          StoreVar result
+  explanation:       pop value (False) and store locally in variable "result"
+  source code:       result = False
+                     ^^^^^^^^
+  method variables:  { candidate: 0, citizen: 2, election: ?e, result: False }
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }]
+
+Step 256:
+  program counter:   1042
+  hvm code:          Push PC(714)
+  explanation:       push program counter constant 714 ("release")
+  start statement:   line=28 column=5
+  end statement:     line=28 column=44
+  source code:       release(?(election->locks_cit[citizen]))
+                     ^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, PC(714)]
+
+Step 257:
+  program counter:   1043
+  hvm code:          LoadVar election
+  explanation:       push value (?e) of variable "election"
+  source code:       release(?(election->locks_cit[citizen]))
+                               ^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, PC(714), ?e]
+
+Step 258:
+  program counter:   1044
+  hvm code:          Push "locks_cit"
+  explanation:       push constant "locks_cit"
+  source code:       release(?(election->locks_cit[citizen]))
+                                         ^^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, PC(714), ?e, "locks_cit"]
+
+Step 259:
+  program counter:   1045
+  hvm code:          Address
+  explanation:       pop a key ("locks_cit") and an address (?e) and push the combined address (?e["locks_cit"])
+  source code:       release(?(election->locks_cit[citizen]))
+                               ^^^^^^^^^^^^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, PC(714), ?e["locks_cit"]]
+
+Step 260:
+  program counter:   1046
+  hvm code:          LoadVar citizen
+  explanation:       push value (2) of variable "citizen"
+  source code:       release(?(election->locks_cit[citizen]))
+                                                   ^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, PC(714), ?e["locks_cit"], 2]
+
+Step 261:
+  program counter:   1047
+  hvm code:          DelVar citizen
+  explanation:       delete method variable citizen
+  start expression:  line=28 column=35
+  end expression:    line=28 column=41
+  method variables:  { candidate: 0, election: ?e, result: False }
+
+Step 262:
+  program counter:   1048
+  hvm code:          Address
+  explanation:       pop a key (2) and an address (?e["locks_cit"]) and push the combined address (?e["locks_cit"][2])
+  source code:       release(?(election->locks_cit[citizen]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, PC(714), ?e["locks_cit"][2]]
+
+Step 263:
+  program counter:   1049
+  hvm code:          Apply
+  explanation:       pop an argument (?e["locks_cit"][2]) and a program counter value (714: "release") and call the method
+  source code:       release(?(election->locks_cit[citizen]))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  call trace:        test_withdraw(?e, 0, 1, 2) --> vote(?e, 0, 2) --> release(?e["locks_cit"][2])
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, 16802, ?e["locks_cit"][2]]
+
+Step 264:
+  program counter:   714
+  hvm code:          Frame release(binsema)
+  explanation:       method "release" with argument binsema set to ?e["locks_cit"][2]
+  file:              /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/harmony_model_checker/modules/synch.hny
+  start statement:   line=34 column=1
+  end statement:     line=34 column=21
+  source code:       def release(binsema):
+                     ^^^^^^^^^^^^^^^^^^^^^
+  method variables:  { binsema: ?e["locks_cit"][2], result: None }
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, 16802, { "candidate": 0, "election": ?e, "result": False }]
+
+Step 265:
+  program counter:   715
+  hvm code:          AtomicInc(lazy)
+  explanation:       increment atomic counter from 0 to 1: becomes atomic
+  start statement:   line=35 column=5
+  end statement:     line=35 column=15
+  source code:       atomically:
+                     ^^^^^^^^^^
+  call trace:        test_withdraw(?e, 0, 1, 2) --> vote(?e, 0, 2) --> release(?e["locks_cit"][2])
+
+Step 266:
+  program counter:   716
+  hvm code:          ReadonlyInc
+  explanation:       increment readonly counter from 0 to 1: becomes readonly
+  start statement:   line=36 column=9
+  end statement:     line=36 column=23
+  source code:       assert !binsema
+                     ^^^^^^^^^^^^^^^
+
+Step 267:
+  program counter:   717
+  hvm code:          AtomicInc(lazy)
+  explanation:       increment atomic counter from 1 to 2: remains atomic
+  start expression:  line=36 column=9
+  end expression:    line=36 column=23
+
+Step 268:
+  program counter:   718
+  hvm code:          LoadVar binsema
+  explanation:       push value (?e["locks_cit"][2]) of variable "binsema"
+  source code:       assert !binsema
+                             ^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, 16802, { "candidate": 0, "election": ?e, "result": False }, ?e["locks_cit"][2]]
+
+Step 269:
+  program counter:   719
+  hvm code:          Load
+  explanation:       pop address of variable (?e["locks_cit"][2]) and push value (True)
+  source code:       assert !binsema
+                            ^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, 16802, { "candidate": 0, "election": ?e, "result": False }, True]
+
+Step 270:
+  program counter:   720
+  hvm code:          Assert
+  explanation:       pop a value (True); do not raise exception
+  source code:       assert !binsema
+                     ^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, 16802, { "candidate": 0, "election": ?e, "result": False }]
+
+Step 271:
+  program counter:   721
+  hvm code:          AtomicDec
+  explanation:       decrement atomic counter from 2 to 1: remains atomic
+  source code:       assert !binsema
+                     ^^^^^^^^^^^^^^^
+
+Step 272:
+  program counter:   722
+  hvm code:          ReadonlyDec
+  explanation:       decrement readonly counter from 1 to 0: no longer readonly
+  start expression:  line=36 column=9
+  end expression:    line=36 column=23
+
+Step 273:
+  program counter:   723
+  hvm code:          LoadVar binsema
+  explanation:       push value (?e["locks_cit"][2]) of variable "binsema"
+  start statement:   line=37 column=9
+  end statement:     line=37 column=24
+  source code:       !binsema = False
+                      ^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, 16802, { "candidate": 0, "election": ?e, "result": False }, ?e["locks_cit"][2]]
+
+Step 274:
+  program counter:   724
+  hvm code:          DelVar binsema
+  explanation:       delete method variable binsema
+  start expression:  line=37 column=10
+  end expression:    line=37 column=16
+  method variables:  { result: None }
+
+Step 275:
+  program counter:   725
+  hvm code:          Push False
+  explanation:       push constant False
+  source code:       !binsema = False
+                                ^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, 16802, { "candidate": 0, "election": ?e, "result": False }, ?e["locks_cit"][2], False]
+
+Step 276:
+  program counter:   726
+  hvm code:          Store
+  explanation:       pop value (False) and address (?e["locks_cit"][2]) and store
+  source code:       !binsema = False
+                     ^^^^^^^^^^
+  shared variables:  { EXPECTED_VOTES: [ 3, 0 ], NUM_CANDIDATES: 2, NUM_CITIZENS: 3, WINNER: 0, e: { "candidates": [ 1, 0 ], "citizens": [ { "voted": False, "voted_for": -1 }, { "voted": False, "voted_for": -1 }, { "voted": True, "voted_for": 0 } ], "locks_can": [ True, False ], "locks_cit": [ False, False, False ] }, number_of_spawned_threads: 4, threads_executed: 0 }
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, 16802, { "candidate": 0, "election": ?e, "result": False }]
+
+Step 277:
+  program counter:   727
+  hvm code:          AtomicDec
+  explanation:       decrement atomic counter from 1 to 0: no longer atomic
+  start statement:   line=35 column=5
+  end statement:     line=35 column=15
+  source code:       atomically:
+                     ^^^^^^^^^^^
+
+Step 278:
+  program counter:   728
+  hvm code:          Return
+  explanation:       push result (None) and restore method variables
+  start statement:   line=34 column=1
+  end statement:     line=34 column=21
+  source code:       def release(binsema):
+                     ^^^^^^^^^^^^^^^^^^^^^
+  method variables:  { candidate: 0, election: ?e, result: False }
+  call trace:        test_withdraw(?e, 0, 1, 2) --> vote(?e, 0, 2)
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, None]
+
+Step 279:
+  program counter:   1050
+  hvm code:          Pop
+  explanation:       pop and discard value (None)
+  file:              electionimpl.hny
+  start statement:   line=28 column=5
+  end statement:     line=28 column=44
+  source code:       release(?(election->locks_cit[citizen]))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }]
+
+Step 280:
+  program counter:   1051
+  hvm code:          Push PC(714)
+  explanation:       push program counter constant 714 ("release")
+  start statement:   line=29 column=5
+  end statement:     line=29 column=46
+  source code:       release(?(election->locks_can[candidate]))
+                     ^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, PC(714)]
+
+Step 281:
+  program counter:   1052
+  hvm code:          LoadVar election
+  explanation:       push value (?e) of variable "election"
+  source code:       release(?(election->locks_can[candidate]))
+                               ^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, PC(714), ?e]
+
+Step 282:
+  program counter:   1053
+  hvm code:          DelVar election
+  explanation:       delete method variable election
+  start expression:  line=29 column=15
+  end expression:    line=29 column=22
+  method variables:  { candidate: 0, result: False }
+
+Step 283:
+  program counter:   1054
+  hvm code:          Push "locks_can"
+  explanation:       push constant "locks_can"
+  source code:       release(?(election->locks_can[candidate]))
+                                         ^^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, PC(714), ?e, "locks_can"]
+
+Step 284:
+  program counter:   1055
+  hvm code:          Address
+  explanation:       pop a key ("locks_can") and an address (?e) and push the combined address (?e["locks_can"])
+  source code:       release(?(election->locks_can[candidate]))
+                               ^^^^^^^^^^^^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, PC(714), ?e["locks_can"]]
+
+Step 285:
+  program counter:   1056
+  hvm code:          LoadVar candidate
+  explanation:       push value (0) of variable "candidate"
+  source code:       release(?(election->locks_can[candidate]))
+                                                   ^^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, PC(714), ?e["locks_can"], 0]
+
+Step 286:
+  program counter:   1057
+  hvm code:          DelVar candidate
+  explanation:       delete method variable candidate
+  start expression:  line=29 column=35
+  end expression:    line=29 column=43
+  method variables:  { result: False }
+
+Step 287:
+  program counter:   1058
+  hvm code:          Address
+  explanation:       pop a key (0) and an address (?e["locks_can"]) and push the combined address (?e["locks_can"][0])
+  source code:       release(?(election->locks_can[candidate]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, PC(714), ?e["locks_can"][0]]
+
+Step 288:
+  program counter:   1059
+  hvm code:          Apply
+  explanation:       pop an argument (?e["locks_can"][0]) and a program counter value (714: "release") and call the method
+  source code:       release(?(election->locks_can[candidate]))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  call trace:        test_withdraw(?e, 0, 1, 2) --> vote(?e, 0, 2) --> release(?e["locks_can"][0])
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, 16962, ?e["locks_can"][0]]
+
+Step 289:
+  program counter:   714
+  hvm code:          Frame release(binsema)
+  explanation:       method "release" with argument binsema set to ?e["locks_can"][0]
+  file:              /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/harmony_model_checker/modules/synch.hny
+  start statement:   line=34 column=1
+  end statement:     line=34 column=21
+  source code:       def release(binsema):
+                     ^^^^^^^^^^^^^^^^^^^^^
+  method variables:  { binsema: ?e["locks_can"][0], result: None }
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, 16962, { "result": False }]
+
+Step 290:
+  program counter:   715
+  hvm code:          AtomicInc(lazy)
+  explanation:       increment atomic counter from 0 to 1: becomes atomic
+  start statement:   line=35 column=5
+  end statement:     line=35 column=15
+  source code:       atomically:
+                     ^^^^^^^^^^
+  call trace:        test_withdraw(?e, 0, 1, 2) --> vote(?e, 0, 2) --> release(?e["locks_can"][0])
+
+Step 291:
+  program counter:   716
+  hvm code:          ReadonlyInc
+  explanation:       increment readonly counter from 0 to 1: becomes readonly
+  start statement:   line=36 column=9
+  end statement:     line=36 column=23
+  source code:       assert !binsema
+                     ^^^^^^^^^^^^^^^
+
+Step 292:
+  program counter:   717
+  hvm code:          AtomicInc(lazy)
+  explanation:       increment atomic counter from 1 to 2: remains atomic
+  start expression:  line=36 column=9
+  end expression:    line=36 column=23
+
+Step 293:
+  program counter:   718
+  hvm code:          LoadVar binsema
+  explanation:       push value (?e["locks_can"][0]) of variable "binsema"
+  source code:       assert !binsema
+                             ^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, 16962, { "result": False }, ?e["locks_can"][0]]
+
+Step 294:
+  program counter:   719
+  hvm code:          Load
+  explanation:       pop address of variable (?e["locks_can"][0]) and push value (True)
+  source code:       assert !binsema
+                            ^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, 16962, { "result": False }, True]
+
+Step 295:
+  program counter:   720
+  hvm code:          Assert
+  explanation:       pop a value (True); do not raise exception
+  source code:       assert !binsema
+                     ^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, 16962, { "result": False }]
+
+Step 296:
+  program counter:   721
+  hvm code:          AtomicDec
+  explanation:       decrement atomic counter from 2 to 1: remains atomic
+  source code:       assert !binsema
+                     ^^^^^^^^^^^^^^^
+
+Step 297:
+  program counter:   722
+  hvm code:          ReadonlyDec
+  explanation:       decrement readonly counter from 1 to 0: no longer readonly
+  start expression:  line=36 column=9
+  end expression:    line=36 column=23
+
+Step 298:
+  program counter:   723
+  hvm code:          LoadVar binsema
+  explanation:       push value (?e["locks_can"][0]) of variable "binsema"
+  start statement:   line=37 column=9
+  end statement:     line=37 column=24
+  source code:       !binsema = False
+                      ^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, 16962, { "result": False }, ?e["locks_can"][0]]
+
+Step 299:
+  program counter:   724
+  hvm code:          DelVar binsema
+  explanation:       delete method variable binsema
+  start expression:  line=37 column=10
+  end expression:    line=37 column=16
+  method variables:  { result: None }
+
+Step 300:
+  program counter:   725
+  hvm code:          Push False
+  explanation:       push constant False
+  source code:       !binsema = False
+                                ^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, 16962, { "result": False }, ?e["locks_can"][0], False]
+
+Step 301:
+  program counter:   726
+  hvm code:          Store
+  explanation:       pop value (False) and address (?e["locks_can"][0]) and store
+  source code:       !binsema = False
+                     ^^^^^^^^^^
+  shared variables:  { EXPECTED_VOTES: [ 3, 0 ], NUM_CANDIDATES: 2, NUM_CITIZENS: 3, WINNER: 0, e: { "candidates": [ 1, 0 ], "citizens": [ { "voted": False, "voted_for": -1 }, { "voted": False, "voted_for": -1 }, { "voted": True, "voted_for": 0 } ], "locks_can": [ False, False ], "locks_cit": [ False, False, False ] }, number_of_spawned_threads: 4, threads_executed: 0 }
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, 16962, { "result": False }]
+
+Step 302:
+  program counter:   727
+  hvm code:          AtomicDec
+  explanation:       decrement atomic counter from 1 to 0: no longer atomic
+  start statement:   line=35 column=5
+  end statement:     line=35 column=15
+  source code:       atomically:
+                     ^^^^^^^^^^^
+
+Step 303:
+  program counter:   728
+  hvm code:          Return
+  explanation:       push result (None) and restore method variables
+  start statement:   line=34 column=1
+  end statement:     line=34 column=21
+  source code:       def release(binsema):
+                     ^^^^^^^^^^^^^^^^^^^^^
+  method variables:  { result: False }
+  call trace:        test_withdraw(?e, 0, 1, 2) --> vote(?e, 0, 2)
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, None]
+
+Step 304:
+  program counter:   1060
+  hvm code:          Pop
+  explanation:       pop and discard value (None)
+  file:              electionimpl.hny
+  start statement:   line=29 column=5
+  end statement:     line=29 column=46
+  source code:       release(?(election->locks_can[candidate]))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  stack:             [{:}, 21506, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }]
+
+Step 305:
+  program counter:   1061
+  hvm code:          Return
+  explanation:       push result (False) and restore method variables
+  start statement:   line=14 column=1
+  end statement:     line=14 column=39
+  source code:       def vote(election, candidate, citizen):
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  method variables:  { citizen_idx: 2, e: ?e, result: None, second_candidate: 1 }
+  call trace:        test_withdraw(?e, 0, 1, 2)
+  stack:             [{:}, False]
+
+Step 306:
+  program counter:   1344
+  hvm code:          Pop
+  explanation:       pop and discard value (False)
+  file:              electiontest.hny
+  start statement:   line=23 column=5
+  end statement:     line=23 column=50
+  source code:       election.vote(e, first_candidate, citizen_idx)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  stack:             [{:}]
+
+Step 307:
+  program counter:   1345
+  hvm code:          Push PC(1063)
+  explanation:       push program counter constant 1063 ("withdraw")
+  start statement:   line=24 column=5
+  end statement:     line=24 column=37
+  source code:       election.withdraw(e, citizen_idx)
+                     ^^^^^^^^^^^^^^^^^
+  stack:             [{:}, PC(1063)]
+
+Step 308:
+  program counter:   1346
+  hvm code:          Push ()
+  explanation:       building a tuple: push constant ()
+  source code:       election.withdraw(e, citizen_idx)
+                                       ^^^^^^^^^^^^^^
+  stack:             [{:}, PC(1063), []]
+
+Step 309:
+  program counter:   1347
+  hvm code:          LoadVar e
+  explanation:       push value (?e) of variable "e"
+  source code:       election.withdraw(e, citizen_idx)
+                                       ^
+  stack:             [{:}, PC(1063), [], ?e]
+
+Step 310:
+  program counter:   1348
+  hvm code:          2-ary ListAdd
+  explanation:       pop 2 values (?e, []); insert first value into the second; push result ([?e])
+  source code:       election.withdraw(e, citizen_idx)
+                                       ^^^^^^^^^^^^^^
+  stack:             [{:}, PC(1063), [ ?e ]]
+
+Step 311:
+  program counter:   1349
+  hvm code:          LoadVar citizen_idx
+  explanation:       push value (2) of variable "citizen_idx"
+  source code:       election.withdraw(e, citizen_idx)
+                                          ^^^^^^^^^^^
+  stack:             [{:}, PC(1063), [ ?e ], 2]
+
+Step 312:
+  program counter:   1350
+  hvm code:          2-ary ListAdd
+  explanation:       pop 2 values (2, [?e]); insert first value into the second; push result ([?e, 2])
+  source code:       election.withdraw(e, citizen_idx)
+                                       ^^^^^^^^^^^^^^
+  stack:             [{:}, PC(1063), [ ?e, 2 ]]
+
+Step 313:
+  program counter:   1351
+  hvm code:          Apply
+  explanation:       pop an argument ([?e, 2]) and a program counter value (1063: "withdraw") and call the method
+  source code:       election.withdraw(e, citizen_idx)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  call trace:        test_withdraw(?e, 0, 1, 2) --> withdraw(?e, 2)
+  stack:             [{:}, 21634, [ ?e, 2 ]]
+
+Step 314:
+  program counter:   1063
+  hvm code:          Frame withdraw(election, citizen)
+  explanation:       method "withdraw" with argument (election, citizen) set to [?e, 2]
+  file:              electionimpl.hny
+  start statement:   line=32 column=1
+  end statement:     line=32 column=32
+  source code:       def withdraw(election, citizen):
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  method variables:  { citizen: 2, election: ?e, result: None }
+  stack:             [{:}, 21634, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }]
+
+Step 315:
+  program counter:   1064
+  hvm code:          Push PC(695)
+  explanation:       push program counter constant 695 ("acquire")
+  start statement:   line=34 column=5
+  end statement:     line=34 column=44
+  source code:       acquire(?(election->locks_cit[citizen]))
+                     ^^^^^^^
+  stack:             [{:}, 21634, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, PC(695)]
+
+Step 316:
+  program counter:   1065
+  hvm code:          LoadVar election
+  explanation:       push value (?e) of variable "election"
+  source code:       acquire(?(election->locks_cit[citizen]))
+                               ^^^^^^^^
+  stack:             [{:}, 21634, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, PC(695), ?e]
+
+Step 317:
+  program counter:   1066
+  hvm code:          Push "locks_cit"
+  explanation:       push constant "locks_cit"
+  source code:       acquire(?(election->locks_cit[citizen]))
+                                         ^^^^^^^^^
+  stack:             [{:}, 21634, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, PC(695), ?e, "locks_cit"]
+
+Step 318:
+  program counter:   1067
+  hvm code:          Address
+  explanation:       pop a key ("locks_cit") and an address (?e) and push the combined address (?e["locks_cit"])
+  source code:       acquire(?(election->locks_cit[citizen]))
+                               ^^^^^^^^^^^^^^^^^^^
+  stack:             [{:}, 21634, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, PC(695), ?e["locks_cit"]]
+
+Step 319:
+  program counter:   1068
+  hvm code:          LoadVar citizen
+  explanation:       push value (2) of variable "citizen"
+  source code:       acquire(?(election->locks_cit[citizen]))
+                                                   ^^^^^^^
+  stack:             [{:}, 21634, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, PC(695), ?e["locks_cit"], 2]
+
+Step 320:
+  program counter:   1069
+  hvm code:          Address
+  explanation:       pop a key (2) and an address (?e["locks_cit"]) and push the combined address (?e["locks_cit"][2])
+  source code:       acquire(?(election->locks_cit[citizen]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  stack:             [{:}, 21634, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, PC(695), ?e["locks_cit"][2]]
+
+Step 321:
+  program counter:   1070
+  hvm code:          Apply
+  explanation:       pop an argument (?e["locks_cit"][2]) and a program counter value (695: "acquire") and call the method
+  source code:       acquire(?(election->locks_cit[citizen]))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  call trace:        test_withdraw(?e, 0, 1, 2) --> withdraw(?e, 2) --> acquire(?e["locks_cit"][2])
+  stack:             [{:}, 21634, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, 17138, ?e["locks_cit"][2]]
+
+Step 322:
+  program counter:   695
+  hvm code:          Frame acquire(binsema)
+  explanation:       method "acquire" with argument binsema set to ?e["locks_cit"][2]
+  file:              /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/harmony_model_checker/modules/synch.hny
+  start statement:   line=30 column=1
+  end statement:     line=30 column=21
+  source code:       def acquire(binsema):
+                     ^^^^^^^^^^^^^^^^^^^^^
+  method variables:  { binsema: ?e["locks_cit"][2], result: None }
+  stack:             [{:}, 21634, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, 17138, { "citizen": 2, "election": ?e, "result": None }]
+
+Step 323:
+  program counter:   696
+  hvm code:          AtomicInc(lazy)
+  explanation:       increment atomic counter from 0 to 1: becomes atomic
+  start statement:   line=31 column=16
+  end statement:     line=33 column=6
+  source code:       atomically when not !binsema:
+  call trace:        test_withdraw(?e, 0, 1, 2) --> withdraw(?e, 2) --> acquire(?e["locks_cit"][2])
+
+Step 324:
+  program counter:   697
+  hvm code:          ReadonlyInc
+  explanation:       increment readonly counter from 0 to 1: becomes readonly
+  start expression:  line=31 column=16
+  end expression:    line=31 column=16
+
+Step 325:
+  program counter:   698
+  hvm code:          LoadVar binsema
+  explanation:       push value (?e["locks_cit"][2]) of variable "binsema"
+  start statement:   line=31 column=16
+  end statement:     line=31 column=32
+  source code:       atomically when not !binsema:
+                                          ^^^^^^^
+  stack:             [{:}, 21634, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, 17138, { "citizen": 2, "election": ?e, "result": None }, ?e["locks_cit"][2]]
+
+Step 326:
+  program counter:   699
+  hvm code:          Load
+  explanation:       pop address of variable (?e["locks_cit"][2]) and push value (False)
+  source code:       atomically when not !binsema:
+                                         ^^^^^^^^
+  stack:             [{:}, 21634, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, 17138, { "citizen": 2, "election": ?e, "result": None }, False]
+
+Step 327:
+  program counter:   700
+  hvm code:          1-ary not
+  explanation:       pop a value (False); logical not; push result (True)
+  source code:       atomically when not !binsema:
+                                     ^^^^^^^^^^^^
+  stack:             [{:}, 21634, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, 17138, { "citizen": 2, "election": ?e, "result": None }, True]
+
+Step 328:
+  program counter:   701
+  hvm code:          JumpCond False 703
+  explanation:       pop value (True), compare to False, and jump to 703 if the same
+  source code:       atomically when not !binsema:
+                                ^^^^^^^^^^^^^^^^^
+  stack:             [{:}, 21634, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, 17138, { "citizen": 2, "election": ?e, "result": None }]
+
+Step 329:
+  program counter:   702
+  hvm code:          Jump 706
+  explanation:       set program counter to 706
+  source code:       atomically when not !binsema:
+                                                ^
+
+Step 330:
+  program counter:   706
+  hvm code:          ReadonlyDec
+  explanation:       decrement readonly counter from 1 to 0: no longer readonly
+  source code:       atomically when not !binsema:
+                                ^^^^^^^^^^^^^^^^^
+
+Step 331:
+  program counter:   707
+  hvm code:          LoadVar binsema
+  explanation:       push value (?e["locks_cit"][2]) of variable "binsema"
+  start statement:   line=32 column=9
+  end statement:     line=32 column=23
+  source code:       !binsema = True
+                      ^^^^^^^
+  stack:             [{:}, 21634, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, 17138, { "citizen": 2, "election": ?e, "result": None }, ?e["locks_cit"][2]]
+
+Step 332:
+  program counter:   708
+  hvm code:          DelVar binsema
+  explanation:       delete method variable binsema
+  start expression:  line=32 column=10
+  end expression:    line=32 column=16
+  method variables:  { result: None }
+
+Step 333:
+  program counter:   709
+  hvm code:          Push True
+  explanation:       push constant True
+  source code:       !binsema = True
+                                ^^^^
+  stack:             [{:}, 21634, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, 17138, { "citizen": 2, "election": ?e, "result": None }, ?e["locks_cit"][2], True]
+
+Step 334:
+  program counter:   710
+  hvm code:          Store
+  explanation:       pop value (True) and address (?e["locks_cit"][2]) and store
+  source code:       !binsema = True
+                     ^^^^^^^^^^
+  shared variables:  { EXPECTED_VOTES: [ 3, 0 ], NUM_CANDIDATES: 2, NUM_CITIZENS: 3, WINNER: 0, e: { "candidates": [ 1, 0 ], "citizens": [ { "voted": False, "voted_for": -1 }, { "voted": False, "voted_for": -1 }, { "voted": True, "voted_for": 0 } ], "locks_can": [ False, False ], "locks_cit": [ False, False, True ] }, number_of_spawned_threads: 4, threads_executed: 0 }
+  stack:             [{:}, 21634, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, 17138, { "citizen": 2, "election": ?e, "result": None }]
+
+Step 335:
+  program counter:   711
+  hvm code:          AtomicDec
+  explanation:       decrement atomic counter from 1 to 0: no longer atomic
+  start statement:   line=31 column=16
+  end statement:     line=31 column=32
+  source code:       atomically when not !binsema:
+                                ^^^^^^^^^^^^^^^^^
+
+Step 336:
+  program counter:   712
+  hvm code:          Return
+  explanation:       push result (None) and restore method variables
+  start statement:   line=30 column=1
+  end statement:     line=30 column=21
+  source code:       def acquire(binsema):
+                     ^^^^^^^^^^^^^^^^^^^^^
+  method variables:  { citizen: 2, election: ?e, result: None }
+  call trace:        test_withdraw(?e, 0, 1, 2) --> withdraw(?e, 2)
+  stack:             [{:}, 21634, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, None]
+
+Step 337:
+  program counter:   1071
+  hvm code:          Pop
+  explanation:       pop and discard value (None)
+  file:              electionimpl.hny
+  start statement:   line=34 column=5
+  end statement:     line=34 column=44
+  source code:       acquire(?(election->locks_cit[citizen]))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  stack:             [{:}, 21634, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }]
+
+Step 338:
+  program counter:   1072
+  hvm code:          LoadVar election
+  explanation:       push value (?e) of variable "election"
+  start statement:   line=35 column=5
+  end statement:     line=35 column=53
+  source code:       candidate = election->citizens[citizen].voted_for
+                                 ^^^^^^^^
+  stack:             [{:}, 21634, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, ?e]
+
+Step 339:
+  program counter:   1073
+  hvm code:          Push "citizens"
+  explanation:       push constant "citizens"
+  source code:       candidate = election->citizens[citizen].voted_for
+                                           ^^^^^^^^
+  stack:             [{:}, 21634, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, ?e, "citizens"]
+
+Step 340:
+  program counter:   1074
+  hvm code:          Address
+  explanation:       pop a key ("citizens") and an address (?e) and push the combined address (?e["citizens"])
+  source code:       candidate = election->citizens[citizen].voted_for
+                                 ^^^^^^^^^^^^^^^^^^
+  stack:             [{:}, 21634, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, ?e["citizens"]]
+
+Step 341:
+  program counter:   1075
+  hvm code:          LoadVar citizen
+  explanation:       push value (2) of variable "citizen"
+  source code:       candidate = election->citizens[citizen].voted_for
+                                                    ^^^^^^^
+  stack:             [{:}, 21634, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, ?e["citizens"], 2]
+
+Step 342:
+  program counter:   1076
+  hvm code:          Address
+  explanation:       pop a key (2) and an address (?e["citizens"]) and push the combined address (?e["citizens"][2])
+  source code:       candidate = election->citizens[citizen].voted_for
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  stack:             [{:}, 21634, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, ?e["citizens"][2]]
+
+Step 343:
+  program counter:   1077
+  hvm code:          Push "voted_for"
+  explanation:       push constant "voted_for"
+  source code:       candidate = election->citizens[citizen].voted_for
+                                                            ^^^^^^^^^^
+  stack:             [{:}, 21634, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, ?e["citizens"][2], "voted_for"]
+
+Step 344:
+  program counter:   1078
+  hvm code:          Address
+  explanation:       pop a key ("voted_for") and an address (?e["citizens"][2]) and push the combined address (?e["citizens"][2]["voted_for"])
+  source code:       candidate = election->citizens[citizen].voted_for
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  stack:             [{:}, 21634, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, ?e["citizens"][2]["voted_for"]]
+
+Step 345:
+  program counter:   1079
+  hvm code:          Load
+  explanation:       pop address of variable (?e["citizens"][2]["voted_for"]) and push value (0)
+  start expression:  line=35 column=17
+  end expression:    line=35 column=53
+  call trace:        test_withdraw(?e, 0, 1, 2) --> withdraw(?e, 2)
+  stack:             [{:}, 21634, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }, 0]
+
+Step 346:
+  program counter:   1080
+  hvm code:          Store election$candidate
+  explanation:       pop value (0) and store into variable election$candidate
+  source code:       candidate = election->citizens[citizen].voted_for
+                     ^^^^^^^^^^^
+  call trace:        test_withdraw(?e, 0, 1, 2) --> withdraw(?e, 2)
+  new mode:          failed
+  stack:             [{:}, 21634, { "citizen_idx": 2, "e": ?e, "result": None, "second_candidate": 1 }]
+  operation failed:  Store: declare a local variable ?election$candidate (or set during initialization)
+
+================================================
+Final state
+================================================
+Threads:
+  T0: pc=1488 terminated atomic __init__()
+  T1: pc=1313 runnable test_vote(?e, 0, 0)
+  T2: pc=1313 runnable test_vote(?e, 1, 1)
+  T3: pc=1313 runnable test_vote(?e, 1, 1)
+  T4: pc=1080 failed test_withdraw(?e, 0, 1, 2) --> withdraw(?e, 2)
+  T5: pc=1372 runnable end_test()
+Variables:
+  EXPECTED_VOTES: [ 3, 0 ]
+  NUM_CANDIDATES: 2
+  NUM_CITIZENS: 3
+  WINNER: 0
+  e: { "candidates": [ 1, 0 ], "citizens": [ { "voted": False, "voted_for": -1 }, { "voted": False, "voted_for": -1 }, { "voted": True, "voted_for": 0 } ], "locks_can": [ False, False ], "locks_cit": [ False, False, True ] }
+  number_of_spawned_threads: 4
+  threads_executed: 0
