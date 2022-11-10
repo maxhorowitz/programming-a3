@@ -3,6 +3,9 @@ import list
 
 def Election(n, m):
     result = {
+        # lock for transfer function
+        .lock_transfer: Lock(),
+
         # n + m locks for candidates and citizens
         .locks_can:[Lock(),]*n,
         .locks_cit:[Lock(),]*m,
@@ -62,6 +65,13 @@ def get_votes(election, candidate):
     release(?(election->locks_can[candidate]))
 
 def transfer(election, candidate_from, candidate_to):
+    #to prevent deadlocking (deadlock could occur if candidate A tries to transfer to 
+    #candidate B while candidate B tries to transfer to candidate A - if they each
+    #acquire the target candidate's lock, it would be a deadlock), we add an all
+    #encompassing lock around the transfer function such that no two transfer threads
+    #can execute concurrently.
+    acquire(?election->lock_transfer)
+
     #acquire lock
     acquire(?(election->locks_can[candidate_from]))
     acquire(?(election->locks_can[candidate_to]))
@@ -72,6 +82,9 @@ def transfer(election, candidate_from, candidate_to):
     #release lock
     release(?(election->locks_can[candidate_from]))
     release(?(election->locks_can[candidate_to]))
+
+    #release transfer lock
+    release(?election->lock_transfer)
 
 def winner(election):
     var high = -1
