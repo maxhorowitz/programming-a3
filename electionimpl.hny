@@ -56,7 +56,7 @@ def get_votes(election, candidate):
     acquire(?(election->locks_can[candidate]))
     
     #get votes
-    result = elections->candidates[candidate]
+    result = election->candidates[candidate]
     
     #release lock
     release(?(election->locks_can[candidate]))
@@ -66,8 +66,8 @@ def transfer(election, candidate_from, candidate_to):
     acquire(?(election->locks_can[candidate_from]))
     acquire(?(election->locks_can[candidate_to]))
 
-    elections->candidates[candidate_to] += elections->candidates[candidate_from]
-    elections->candidates[candidate_from] = 0
+    election->candidates[candidate_to] += election->candidates[candidate_from]
+    election->candidates[candidate_from] = 0
 
     #release lock
     release(?(election->locks_can[candidate_from]))
@@ -76,8 +76,8 @@ def transfer(election, candidate_from, candidate_to):
 def winner(election):
     var high = -1
     var idx = -1
-    for i in candidates:
-        if candidates[i] > high:
-            high = candidates[i]
+    for i in { 0..((len election->candidates)-1) }:
+        if election->candidates[i] > high:
+            high = election->candidates[i]
             idx = i
     result = idx
