@@ -32,7 +32,7 @@ def vote(election, candidate, citizen):
 def withdraw(election, citizen):
     #acquire/release lock for citizen to create candidate variable
     acquire(?(election->locks_cit[citizen]))
-    candidate = election->citizens[citizen].voted_for
+    var candidate = election->citizens[citizen].voted_for
     release(?(election->locks_cit[citizen]))
 
     #acquire locks
@@ -74,8 +74,8 @@ def transfer(election, candidate_from, candidate_to):
     release(?(election->locks_can[candidate_to]))
 
 def winner(election):
-    high = -1
-    idx = -1
+    var high = -1
+    var idx = -1
     for i in candidates:
         if candidates[i] > high:
             high = candidates[i]
